@@ -27,6 +27,13 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  href: "schemes",
+  text: "Go back"
+}) }}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
@@ -43,35 +50,36 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
       
-              <h1>Get a redundancy estimate</h1>
-              <p>Use this service to calculate redundancy estimates for NHS Pension Scheme members.</p>
-              <h2>Before you start</h2>
-              <p>We can only calculate redundancy estimates for members who:</p>
-              <ul>
-                <li>have at least 2 years' qualifying membership within the Scheme</li>
-                <li>have 2 years' continuous service verified by the employer</li>
-                <li>have reached the minimum pension age of the Scheme they are part of</li>
-                <li>do not have a GP practice as their employing authority</li>
-                <li>if they are part of a direction body, have redundancy provisions in place</li>
-                <li>are classed as officer cases</li>
-              </ul>
-
+              <h1 class="nhsuk-heading-l">Check the member's Compendia record</h1>
               {% from 'inset-text/macro.njk' import insetText %}
 
 {{ insetText({
-  html: "<p>If a member does not meet all these criteria,  you need to inform the requesting employer that we cannot provide an estimate.</p>"
+  html: "<p>Before you continue to use the calculator, you should check the 2015 scheme member record is not affected by any of the following circumstances.</p>"
 }) }}
+
+<h3>Make sure the member is not affected by one or more of these circumstances</h3>
+              
+<p>You can only use this service to calculate estimates for members who:</p>
+<ul>
+  <li>do not have pensions on divorce debit</li>
+  <li>do not have additional pensions (APs)</li>
+  <li>do not have an early retirement reduction buy-out (ERRBO)</li>
+  <li>do not have transfers</li>
+  <li>are not over the normal pension age (NPA)</li>
+  <li>are not a McCloud comparison calculation</li>
+</ul>
+
+<h3>If the member is affected</h3>
+<p>You cannot complete the calculation using this service. The record will need to be allocated to the correct pension admin for this type of case. </p>
+        
+              
+
+              
       
-              <h2>Completing the calculation</h2>
+             
       
-              <p>When you start the calculation, we'll ask you to enter all the member data we need to get an estimate. After the data is submitted, the service will create 2 documents:</p>
-              <ul>
-                <li>A calculation sheet</li>
-                <li>An estimate letter - you need to send this to the employer</li>
-              </ul>
-      
-              <a class="nhsuk-button" data-module="nhsuk-button" href="schemes" draggable="false" role="button">
-                Start now
+              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
+                Continue
               </a>
       
             </div>

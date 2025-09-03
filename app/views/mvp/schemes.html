@@ -27,6 +27,13 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  href: "start",
+  text: "Go back"
+}) }}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
@@ -42,42 +49,47 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-      
-              <h1 class="nhsuk-heading-l">Select the Scheme the member is a part of</h1>
-              <p>This information can be found on the Service history set in Compendia.</p>
+
               <div class="nhsuk-form-group">
 
-                <fieldset class="nhsuk-fieldset">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hints-hint">
                   <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading"> 
+                      What Scheme is the member a part of?
+                    </h1>
                   </legend>
+                  <div class="nhsuk-hint" id="example-hints-hint">
+                    This information can be found on the Service history set in Compendia.
+                  </div>
                   <div class="nhsuk-radios" data-module="nhsuk-radios">
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example" name="example" type="radio" value="yes">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example">
-                        1995 Scheme
+                      <input class="nhsuk-radios__input" id="example-hints" name="example-hints" type="radio" value="1995">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-hints">
+                        1995 Scheme only
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="1995 and 2015">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
                         1995 and 2015 Schemes
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      <input class="nhsuk-radios__input" id="example-hints-3" name="example-hints" type="radio" value="2008 and 2015">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-hints-3">
                         2008 and 2015 Schemes
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      <input class="nhsuk-radios__input" id="example-hints-4" name="example-hints" type="radio" value="2015">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-hints-4">
                         2015 Scheme only
                       </label>
                     </div>
                   </div>
                 </fieldset>
               </div>
+              
         
               
 
@@ -85,7 +97,7 @@
       
              
       
-              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
+              <a class="nhsuk-button" data-module="nhsuk-button" href="start" draggable="false" role="button">
                 Continue
               </a>
       
