@@ -30,7 +30,7 @@
 {% from 'back-link/macro.njk' import backLink %}
 
 {{ backLink({
-  href: "schemes",
+  href: "complexities-list",
   text: "Go back"
 }) }}
 
@@ -50,27 +50,20 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
       
-              <h1 class="nhsuk-heading-l">Check the member's Compendia record</h1>
+              <h1 class="nhsuk-heading-l">What is the membership number?</h1>
               {% from 'inset-text/macro.njk' import insetText %}
 
-{{ insetText({
-  html: "<p>Before you continue to use the calculator, you should check the 2015 scheme member record is not affected by any of the following circumstances.</p>"
-}) }}
 
-<h3>Make sure the member is not affected by one or more of these circumstances</h3>
+
+
               
-<p>You can only use this service to calculate estimates for members who:</p>
-<ul>
-  <li>do not have pensions on divorce debit</li>
-  <li>do not have additional pensions (APs)</li>
-  <li>do not have an early retirement reduction buy-out (ERRBO)</li>
-  <li>do not have transfers</li>
-  <li>are not over the normal pension age (NPA)</li>
-  <li>are not a McCloud comparison calculation</li>
-</ul>
+<p>The membership number can be found on the Members basic details set in Compendia.</p>
 
-<h3>If the member is affected</h3>
-<p>You cannot complete the calculation using this service. The record will need to be allocated to the correct pension admin for this type of case. </p>
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="input-width-10">
+    Membership number
+  </label> <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+</div>
         
               
 
@@ -78,7 +71,7 @@
       
              
       
-              <a class="nhsuk-button" data-module="nhsuk-button" href="membership-number" draggable="false" role="button">
+              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
                 Continue
               </a>
       
