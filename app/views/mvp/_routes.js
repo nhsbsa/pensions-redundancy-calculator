@@ -37,6 +37,26 @@ router.post('/schemes', (req, res) => {
     router.post('/membership-error', (req, res) => {
       res.redirect('membership-number')
     });
+
+    //EA number page
+    router.post('/ea-number', (req, res) => {
+      res.redirect('member-name')
+    });
+
+    //National Insurance number page
+    router.post('/national-insurance-number', (req, res) => {
+      res.redirect('member-dob')
+    });
+
+    //Member's name page
+    router.post('/members-name', (req, res) => {
+      res.redirect('ni-number')
+    });
+
+    //Date of birth page
+    router.post('/date-of-birth', (req, res) => {
+      res.redirect('state-pension-age')
+    });
    
 
 

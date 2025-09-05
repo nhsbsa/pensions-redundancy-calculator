@@ -49,25 +49,21 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
+
+              <form action="ea-number" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What is the member's membership number?</h1>
-              {% from 'inset-text/macro.njk' import insetText %}
-
-
-
-
-              
-<p>The membership number can be found on the Members basic details set in Compendia.</p>
+              <h1 class="nhsuk-heading-l">What is the Employing Authorities number?</h1>
+            
+              <p>This information can be found on the Members basic details set in Compendia.</p>
 
 <div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="input-width-10">
-    Membership number
-  </label> <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+  <label class="nhsuk-label" for="input-width-5">
+    Employing Authorities number
+  </label> <input class="nhsuk-input nhsuk-input--width-5" id="input-width-5" name="test-width-5" type="text">
 </div>
         
-              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
-                Continue
-              </a>
+<button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+</form>
       
             </div>
           </div>
