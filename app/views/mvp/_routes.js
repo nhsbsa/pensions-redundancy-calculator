@@ -28,7 +28,15 @@ router.post('/schemes', (req, res) => {
       }
     });
 
-    //Complexities page
+    // Scheme selection kickout page
+    router.post('/kickout', (req, res) => {
+      res.redirect('start')
+    });
+
+    //Membership number not found page
+    router.post('/membership-error', (req, res) => {
+      res.redirect('membership-number')
+    });
    
 
 

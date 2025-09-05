@@ -49,25 +49,13 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
+              <form action="membership-error" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What is the membership number?</h1>
-              {% from 'inset-text/macro.njk' import insetText %}
+              <h1 class="nhsuk-heading-l">The membership number cannot be found</h1>
 
-
-
-
-              
-<p>The membership number can be found on the Members basic details set in Compendia.</p>
-
-<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="input-width-10">
-    Membership number
-  </label> <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
-</div>
-        
-              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
-                Continue
-              </a>
+              <p>The membership number that was entered could not be found. You can enter the membership number again by selecting try again.</p>
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Try again</button>
+            </form>
       
             </div>
           </div>

@@ -30,8 +30,8 @@
 {% from 'back-link/macro.njk' import backLink %}
 
 {{ backLink({
-  href: "start",
-  text: "Go back"
+  "href": "javascript:history.go(-1)",
+  "text": "Go back"
 }) }}
 
   <div class="nhsuk-grid-row">
