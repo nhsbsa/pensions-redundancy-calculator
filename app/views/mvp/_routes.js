@@ -15,18 +15,21 @@ router.post( /start/, (req, res) => {
     res.redirect('scheme')
 });
 
-// Complexities List - Scheme Selection
-router.post('complexities-list', function (req, res) {
-      const scheme = req.session.data['scheme']
+// Schemes page
+router.post('/schemes', (req, res) => {
+      const select = req.session.data['scheme']
   
-      if (scheme === '2015') {
+      if (select == '2015') {
         // Redirect to your special 2015-only page
-        res.redirect('/complexities-list');
+        res.redirect('complexities-list');
       } else {
         // Default page for all other selections
-        res.redirect('/scheme-selection-kickout');
+        res.redirect('scheme-selection-kickout');
       }
     });
+
+    //Complexities page
+   
 
 
 
