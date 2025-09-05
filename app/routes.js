@@ -1,27 +1,17 @@
 // External dependencies
 const express = require('express');
-
 const router = express.Router();
 
-// Add your routes here - above the module.exports line
+// clear session data - link in footer
+router.post('/clear-session-data/', (req, res) => {
+    req.session.data = {}
+    res.render('index')
+})
 
-//MVP Routing//
+// =======================================
+// Version Routes Files Below
+// =======================================
 
-module.exports = function (router) {
-  
-    router.post('complexities-list', function (req, res) {
-      const scheme = req.body.scheme;
-  
-      if (scheme === '2015') {
-        // Redirect to your special 2015-only page
-        res.redirect('/complexities-list');
-      } else {
-        // Default page for all other selections
-        res.redirect('/scheme-selection-kickout');
-      }
-    });
-  
-  };
-
+router.use('/mvp', require('./views/mvp/_routes'));
 
 module.exports = router;
