@@ -49,45 +49,47 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
-              <form action="pension-age" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What is the member's state pension age?</h1>
-            
-              <p>This information can be found on the Members summary set in Compendia.</p>
-
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="select-1">
-                  Years
-                </label> <select class="nhsuk-select nhsuk-select--width-2" id="select-1" name="select-1">
-                  <option value="1" selected>67</option>
-                  <option value="2">66</option>
-                  <option value="3">65</option>
-                </select>
-              </div>
-
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="select-1">
-                  Months
-                </label> <select class="nhsuk-select nhsuk-select--width-2" id="select-1" name="select-1">
-                  <option value="1">11</option>
-                  <option value="2">10</option>
-                  <option value="3">9</option>
-                  <option value="4">8</option>
-                  <option value="5">7</option>
-                  <option value="6">6</option>
-                  <option value="7">5</option>
-                  <option value="8">4</option>
-                  <option value="9">3</option>
-                  <option value="10">2</option>
-                  <option value="11">1</option>
-                  <option value="11"selected>0</option>
-                </select>
-              </div>
-
+              <h1 class="nhsuk-heading-l">Full member details has been found</h1>
               
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-              </form>
+              
+              <p>A case has been found for the membership number that was entered and all of the member's details have been located from the record in Compendia.</p>
+
+              {% from 'inset-text/macro.njk' import insetText %}
+              {{ insetText({
+                html: "<p><strong>Membership number</strong><br>123456789</p>"
+              }) }}
+
+              {% from 'radios/macro.njk' import radios %}
+
+{{ radios({
+  idPrefix: "example",
+  name: "example",
+  fieldset: {
+    legend: {
+      text: "Do you want to continue with the retrieved member's details?",
+      classes: "nhsuk-fieldset__legend--m",
+      isPageHeading: true
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes, use the member's details retrieved"
+    },
+    {
+      value: "no",
+      text: "No, I will enter the member's details manually"
+    }
+  ]
+}) }}
+
+
+
+        
+              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
+                Continue
+              </a>
       
             </div>
           </div>

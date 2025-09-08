@@ -58,6 +58,28 @@ router.post('/schemes', (req, res) => {
       res.redirect('state-pension-age')
     });
    
+    //Complexities list page
+    router.post('/complexities-list', (req, res) => {
+      const select = req.session.data['complexities']
+  
+      if (select == 'yes') {
+        // Redirect to your special 2015-only page
+        res.redirect('cannot-be-calculated');
+      } else {
+        // Default page for all other selections
+        res.redirect('membership-number');
+      }
+    });
+
+    //Cannot be calculated page
+    router.post('/cannot-be-calculated', (req, res) => {
+      res.redirect('start')
+    });
+
+    //State pension age page
+    router.post('/pension-age', (req, res) => {
+      res.redirect('scheme-start-date')
+    });
 
 
 

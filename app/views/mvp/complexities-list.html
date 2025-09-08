@@ -67,13 +67,35 @@
   <li>are not a McCloud comparison calculation</li>
 </ul>
 
-<h3>If the member is affected</h3>
-<p>You cannot complete the calculation using this service. The record will need to be allocated to the correct pension admin for this type of case. </p>
+<div class="nhsuk-form-group">
+  <form action="complexities-list" method="post" class="form">
+
+  <fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+      <h1 class="nhsuk-fieldset__heading">
+        Is the member affected by any of the circumstances?
+      </h1>
+    </legend>
+    <div class="nhsuk-radios" data-module="nhsuk-radios">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example" name="complexities" type="radio" value="yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="example">
+          Yes
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-2" name="complexities" type="radio" value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
         
               
-<a class="nhsuk-button" data-module="nhsuk-button" href="membership-number" draggable="false" role="button">
-                Continue
-              </a>
+<button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+            </form>
       
             </div>
           </div>
