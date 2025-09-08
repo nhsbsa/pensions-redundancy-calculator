@@ -54,20 +54,15 @@
               {% from 'inset-text/macro.njk' import insetText %}
 
 
-
-
-              
-<p>The membership number can be found on the Members basic details set in Compendia.</p>
-
-<div class="nhsuk-form-group">
-  <label class="nhsuk-label" for="input-width-10">
-    Membership number
-  </label> <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
-</div>
-        
-              <a class="nhsuk-button" data-module="nhsuk-button" href="#" draggable="false" role="button">
-                Continue
-              </a>
+              <p>The membership number can be found on the Members basic details set in Compendia.</p>
+              <div class="nhsuk-form-group">
+                <form action="membership" method="post" class="form">
+                  <label class="nhsuk-label" for="input-width-10">
+                    Membership number
+                  </label> <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="memberNumber" type="text">
+                </div>
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              </form>
       
             </div>
           </div>

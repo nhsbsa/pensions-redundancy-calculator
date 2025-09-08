@@ -81,6 +81,17 @@ router.post('/schemes', (req, res) => {
       res.redirect('scheme-start-date')
     });
 
+    //Membership number page
+    router.post('/membership', (req, res) => {
+      let number = req.session.data['memberNumber']
+
+      if (number == '123456789') {
+      res.redirect('full-member-details-found')
+    } else {
+      res.redirect('membership-number-not-found')
+    }
+    });
+
 
 
 module.exports = router;
