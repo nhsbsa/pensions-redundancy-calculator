@@ -92,6 +92,20 @@ router.post('/schemes', (req, res) => {
     }
     });
 
+    //full member details page
+    router.post('/full-member-details-found', (req, res) => {
+      const pick = req.session.data['fullDetails']
+  
+      if (pick == 'yes') {
+        // Redirect to Check member details page
+        res.redirect('check-member-details');
+      } else {
+        // Redirect to EA number page (manual data entry)
+        res.redirect('ea-number');
+      }
+    });
+
+
 
 
 module.exports = router;
