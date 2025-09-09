@@ -1,0 +1,462 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+<!-- For adding a breadcrumb or back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Go back"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+      
+              <h1 class="nhsuk-heading-l">Redundancy estimate</h1>
+              
+              
+              <p>This is a summary of the member details, pension benefits and the calculations used to reach the pension benefits. Use the tabs to switch between the calculation sheet and estimate letter. Check the data before you continue.</p>
+              <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+                <h2 class="nhsuk-tabs__title">
+                  Contents
+                </h2>
+                <ul class="nhsuk-tabs__list">
+                  <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+                    <a class="nhsuk-tabs__tab" href="#calc-sheet">
+                      Calculation sheet
+                    </a>
+                  </li>
+                  <li class="nhsuk-tabs__list-item">
+                    <a class="nhsuk-tabs__tab" href="#est-letter">
+                      Estimate letter
+                    </a>
+                  </li>
+                </ul>
+                <div class="nhsuk-tabs__panel" id="calc-sheet">
+                  <h3>2015 Scheme benefits calculation sheet</h3>
+                  <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Membership number
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {{ data['memberNumber']}}
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Date of birth
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        15 March 1984
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        State pension age
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        67 years
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Age at redundancy
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        59 years
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Years leaving before normal pension age
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        8 years
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Retirement date
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        01 January 2026
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        ERF1 Factor (2023)
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        0.681
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Unreduced pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £3,928.28
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Lump sum by commutation
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £16,824.00
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Post commutation pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £2,526.28
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Redundancy payment
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £{{ data['redundancyPay']}}
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        CER1 Factor (2023)
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        23.066
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Reduced pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £2,675.16
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Lump sum by commutation
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £11,460.00
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Post commutation pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £1,720.16
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Unearned pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £1,253.12
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Survivor's pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £1,325.79
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Life assurance lump sum
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £27,282.35
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Pensionable earnings
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £84,477.21
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <h4>How the figures were calculated</h4>
+                  <dl class="nhsuk-summary-list">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Unreduced pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £5,948.01 ÷ 54 = £110.15 <br> £110.15 + £3,818.13 = <strong>£3,928.28</strong>
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Survivor's pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        33.75 ÷ 100 x £3,928.28 = <strong>£1,325.79</strong>
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Life assurance lump sum
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        365 - 93 (01/04/25 - 02/07/25) = 272 <br> £28,628.80 ÷ 365 x 272 = £21,334.34 <br> £21,334.34 + £5,948.01 = <strong>£27,282.35</strong>
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Pensionable earnings total
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £78,529.20 + £5,948.01 = <strong>£84,477.21</strong>
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <h4>Part 1 (Capitilised costs)</h4>
+                  <p><b>Employer cost for compulsory retirement</b></p>
+
+                  <p><b>Cost of unreduced pension</b><br>£3,928.28 - £2,675.16 x 23.066 = £28,904.47</p>
+                  <p>If the employer cost is greater than the redundancy payment, the member is eligible for additional contribution option.</p>
+                  <p><b>Cost to secure no reduction to benefits</b> = £28,900.00 (Rounded down to nearest £10)</p>
+
+                  <H4>Part 2</H4>
+                  <p><b>Top up pension over normal early retirement pension</b></p>
+                  <p><b>Main Scheme pension</b><br>£3,928.28 - £2,675.16 = £1,253.12<br>£1,253.12 x £13,601.42 ÷ £28,900.00 = £589.77</p>
+
+                  <p><b>Pension available to member</b><br>£2,675.16 + £589.77 = £3,264.93</p>
+
+                  <p><b>Lump sum by commutation</b><br>£3,264.93 x 30 ÷ 7 = £13,992.00</p>
+
+                  <p><b>Reduced pension</b><br>£3,264.93 - (£13,992.00 ÷ 12) = £2,098.93</p>
+
+                  
+
+                  
+              
+                </div>
+                <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="est-letter">
+                  <div style="text-align: right;">
+                    <p><b>NHS Pensions</b><br>Address details <br>Address details <br>ABC 123</p>
+                    <p>Tel: 0300 330 1353 <br>
+                       Website: <a href="https://www.nhsbsa.nhs.uk/nhs-pensions">www.nhsbsa.nhs.uk/nhs-pensions</a>
+                    </p>
+                    <p>Date: 24 June 2025</p>
+                  </div>
+                  <p>Thank you for your request for an estimate of redundancy benefits.</p>
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Member name
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        John Smith
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Membership number
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        {{ data['memberNumber']}}
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        National Insurance number
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        ABC123456J
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <p><b>Based on:</b></p>
+
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        First date of membership
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        10/01/2020
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Last date of membership
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        31/12/2025
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Actual pensionable earnings
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £84,477.21
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Membership duration of
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        5 years 340 days
+                      </dd>
+                    </div>
+                  </dl>
+                  <p>The following figures have been calculated using the membership information as currently held and assume there will be no change to the pensionable pay, last date of membership or employment pattern prior to retirement.</p>
+
+                  <p><b>Unreduced benefits:</b></p>
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £3,938.28
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Survivor's pension
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £1,325.79
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Life Assurance Lump Sum <br>(2x actual pensionable pay for death in service only)
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £54,564.68
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <p>At retirement the member can increase the lump sum retiring allowance by exchanging some of their pension. If the member chooses to exchange pension to provide the maximum lump sum retiring allowance, the pension benefits would be:</p>
+
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Pension (reduced)
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £2,526.28
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Lump sum
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £16,824.00
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Capitalised cost of the above benefits<br>(one-off payment calculated before giving up any pension for a lump sum)
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £28,904.47
+                      </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key" style="width: 60%;">
+                        Redundancy payment
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        £13,601.42
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <p>The member has the option to take the redundancy payment and defer the above pension benefits for payment at their normal pension age. They also have options for claiming their benefits early.
+                    As the redundancy payment does not meet the capitalised cost, those options are:</p>
+                  <ol>
+                    <li>Take their redundancy payment and claim actuarially reduced benefits.</li>
+                    <li>Use their redundancy payment to increase the actuarially reduced pension benefits.</li>
+                    <li>Use their redundancy payment and make an additional contribution to further increase the actuarially reduced pension benefits.</li>
+                  </ol>
+
+                  <h4>Option 1 - Actuarially reduced benefits</h4>
+                  <p>The following figures have been calculated assuming that the member elects to receive their redundancy payment in full and claim actuarially reduced scheme benefits.</p>
+                </div>
+              </div>
+              
+
+              <form action="calculation-result" method="post" class="form">
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+            </form>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
