@@ -55,10 +55,10 @@
               
               <p>A case has been found for the membership number that was entered and all of the member's details have been located from the record in Compendia.</p>
 
-              {% from 'inset-text/macro.njk' import insetText %}
-              {{ insetText({
-                html: "<p><strong>Membership number</strong><br>123456789</p>"
-              }) }}
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p><strong>Membership number</strong><br>{{ data['memberNumber']}}</p>
+              </div>
 
               <div class="nhsuk-form-group">
                 <form action="full-member-details-found" method="post" class="form">

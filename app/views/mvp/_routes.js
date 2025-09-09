@@ -85,7 +85,7 @@ router.post('/schemes', (req, res) => {
     router.post('/membership', (req, res) => {
       let number = req.session.data['memberNumber']
 
-      if (number == '123456789') {
+      if (number === '123456789' || number === '123456787' || number === '123456786') {
       res.redirect('complexity-check')
     } else {
       res.redirect('membership-number-not-found')
@@ -135,6 +135,63 @@ router.post('/schemes', (req, res) => {
           res.redirect('date-of-estimate-form');
         }
         });
+
+        //Date of estimate form page
+        router.post('/date-of-estimate-form', (req, res) => {
+          // Get the values entered
+          const day = req.session.data['estimateDay'];
+          const month = req.session.data['estimateMonth'];
+          const year = req.session.data['estimateYear'];
+        
+          // Check if the entered date is 01 01 1990
+          if (day === '01' && month === '1' && year === '1980') {
+            // send to under 55 at redundancy page
+            res.redirect('under-55-at-redundancy');
+          } else {
+            // Otherwise send them somewhere else
+            res.redirect('pensionable-earnings-april-form');
+          }
+        });
+
+        //Date of estimate spreadsheet page
+        router.post('/date-of-estimate-spreadsheet', (req, res) => {
+          // Get the values entered
+          const day = req.session.data['estimateDay'];
+          const month = req.session.data['estimateMonth'];
+          const year = req.session.data['estimateYear'];
+        
+          // If the entered date is 01 01 1990
+          if (day === '01' && month === '1' && year === '1980') {
+            // send to under 55 at redundancy page
+            res.redirect('under-55-at-redundancy');
+          } else {
+            // Otherwise send them to
+            res.redirect('pensionable-earnings-april-spreadsheet');
+          }
+        });
+
+        //Estimated pensionable earnings form page
+        router.post('/pensionable-earning-form', (req, res) => {
+          res.redirect('redundancy-pay-form')
+        });
+
+        //Estimated pensionable earnings spreadsheet page
+        router.post('/pensionable-earning-spreadsheet', (req, res) => {
+          res.redirect('redundancy-pay-spreadsheet')
+        });
+
+        //Redundancy payment form page
+        router.post('/redundancy-pay-form', (req, res) => {
+          res.redirect('check-final-details')
+        });
+
+         //Redundancy payment spreadsheet page
+         router.post('/redundancy-pay-spreadsheet', (req, res) => {
+          res.redirect('check-final-details')
+        });
+
+
+
 
 
 
