@@ -50,47 +50,34 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
       
-              <h1 class="nhsuk-heading-l">A complexity has been found on the case</h1>
-              
-              
-              <p>The complexities that were found on the case were:</p>
-              <ul>
-                <li>additional pensions</li>
-              </ul>
-
-              {% from 'inset-text/macro.njk' import insetText %}
-              {{ insetText({
-                html: "<p>You should check the additional pensions set in the member's record to see if the complexity is valid. If the complexity is not relevant to the case, you can continue with the calculation.</p>"
-              }) }}
-
+              <h1 class="nhsuk-heading-l">How were the redundancy details received?</h1>
+            
+              <p>For multiple redundancy requests from the employer, the details will usually be received using the bulk spreadsheet. For single requests, they will often come using the AW295 form.</p>
               <div class="nhsuk-form-group">
 
                 <fieldset class="nhsuk-fieldset">
-                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                    <h1 class="nhsuk-fieldset__heading">
-                      Would you like to continue with the calculation?
-                    </h1>
-                  </legend>
+                  <form action="redundancy-details" method="post" class="form">
                   <div class="nhsuk-radios" data-module="nhsuk-radios">
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example" name="check" type="radio" value="yes">
+                      <input class="nhsuk-radios__input" id="example" name="receivedBy" type="radio" value="spreadsheet">
                       <label class="nhsuk-label nhsuk-radios__label" for="example">
-                        Yes
+                        Employing authority bulk spreadsheet
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="check" type="radio" value="no">
+                      <input class="nhsuk-radios__input" id="example-2" name="receivedBy" type="radio" value="form">
                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                        No
+                        AW295 form
                       </label>
                     </div>
                   </div>
                 </fieldset>
               </div>
 
+              
 
-  
-              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              </form>
       
             </div>
           </div>

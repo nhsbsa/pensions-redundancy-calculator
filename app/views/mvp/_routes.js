@@ -86,7 +86,7 @@ router.post('/schemes', (req, res) => {
       let number = req.session.data['memberNumber']
 
       if (number == '123456789') {
-      res.redirect('full-member-details-found')
+      res.redirect('complexity-check')
     } else {
       res.redirect('membership-number-not-found')
     }
@@ -104,6 +104,41 @@ router.post('/schemes', (req, res) => {
         res.redirect('ea-number');
       }
     });
+
+    //Complexity check page
+    router.post('/complexity-check', (req, res) => {
+      const select = req.session.data['check']
+
+      if (select == 'yes') {
+        //redirect to Full member details page
+        res.redirect('full-member-details-found');
+      } else {
+        //redirect to kickout page
+        res.redirect('cannot-be-calculated');
+      }
+      });
+
+      //Check member details page
+      router.post('/check-member-details', (req, res) => {
+        res.redirect('redundancy-details')
+      });
+
+      //Redundancy details page
+      router.post('/redundancy-details', (req, res) => {
+        const pick = req.session.data['receivedBy']
+
+        if (pick == 'spreadsheet') {
+          //redirect to date of estimate spreadsheet page
+          res.redirect('date-of-estimate-spreadsheet');
+        } else {
+          //redirect to date of estimate form page
+          res.redirect('date-of-estimate-form');
+        }
+        });
+
+
+
+
 
 
 
