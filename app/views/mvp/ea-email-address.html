@@ -49,55 +49,21 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-      
-              <h1 class="nhsuk-heading-l">Check the member's Compendia record</h1>
-              {% from 'inset-text/macro.njk' import insetText %}
 
-{{ insetText({
-  html: "<p>Before you continue to use the calculator, you should check the 2015 scheme member record is not affected by any of the following circumstances.</p>"
-}) }}
-              
-<p>You can only use this service to calculate estimates for members who:</p>
-<ul>
-  <li>do not have pensions on divorce debit</li>
-  <li>do not have additional pensions (APs)</li>
-  <li>do not have an early retirement reduction buy-out (ERRBO)</li>
-  <li>do not have transfers</li>
-  <li>do not have breaks in service over 5 years</li>
-  <li>are not over the normal pension age (NPA)</li>
-  <li>are not a McCloud comparison calculation</li>
-  <li>are classed as officers</li>
-</ul>
+              <form action="ea-number" method="post" class="form">
+      
+              <h1 class="nhsuk-heading-l">What is the Employing Authorities email address?</h1>
+            
+              <p>This information can be found on the Request for an estimate of benefits form (AW295) / on the original email sent by the employer or on the bulk spreadsheet provided by the employer.</p>
 
 <div class="nhsuk-form-group">
-  <form action="complexities-list" method="post" class="form">
-
-  <fieldset class="nhsuk-fieldset">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-      <h1 class="nhsuk-fieldset__heading">
-        Is the member affected by any of the circumstances?
-      </h1>
-    </legend>
-    <div class="nhsuk-radios" data-module="nhsuk-radios">
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example" name="complexities" type="radio" value="yes">
-        <label class="nhsuk-label nhsuk-radios__label" for="example">
-          Yes
-        </label>
-      </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="complexities" type="radio" value="no">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
+  <label class="nhsuk-label" for="input-width-5">
+    Employing Authorities email address
+  </label> <input class="nhsuk-input nhsuk-input--width-20" id="input-width-5" name="test-width-5" type="text">
 </div>
         
-              
 <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-            </form>
+</form>
       
             </div>
           </div>

@@ -49,54 +49,26 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-panel">
+                <h1 class="nhsuk-panel__title">
+                  Download successful
+                </h1>
+              </div>
       
-              <h1 class="nhsuk-heading-l">Check the member's Compendia record</h1>
-              {% from 'inset-text/macro.njk' import insetText %}
-
-{{ insetText({
-  html: "<p>Before you continue to use the calculator, you should check the 2015 scheme member record is not affected by any of the following circumstances.</p>"
-}) }}
               
-<p>You can only use this service to calculate estimates for members who:</p>
-<ul>
-  <li>do not have pensions on divorce debit</li>
-  <li>do not have additional pensions (APs)</li>
-  <li>do not have an early retirement reduction buy-out (ERRBO)</li>
-  <li>do not have transfers</li>
-  <li>do not have breaks in service over 5 years</li>
-  <li>are not over the normal pension age (NPA)</li>
-  <li>are not a McCloud comparison calculation</li>
-  <li>are classed as officers</li>
-</ul>
+              
+              <p>You've downloaded 2 files:</p>
+              <ul>
+                <li>the calculation sheet</li>
+                <li>the redundancy estimate letter</li>
+              </ul>
 
-<div class="nhsuk-form-group">
-  <form action="complexities-list" method="post" class="form">
+              <p>You can find thme in your Downloads folder on your device.</p>
 
-  <fieldset class="nhsuk-fieldset">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-      <h1 class="nhsuk-fieldset__heading">
-        Is the member affected by any of the circumstances?
-      </h1>
-    </legend>
-    <div class="nhsuk-radios" data-module="nhsuk-radios">
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example" name="complexities" type="radio" value="yes">
-        <label class="nhsuk-label nhsuk-radios__label" for="example">
-          Yes
-        </label>
-      </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="complexities" type="radio" value="no">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          No
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
+              <h3>What happens next</h3>
+              <p>Before starting a new estimate, you must upload the calculation sheet and estimate letter to OneDrive so the quality checking team can access the files and check the calculations.</p>
         
-              
-<button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start a new calculation</button>
             </form>
       
             </div>
