@@ -190,6 +190,37 @@ router.post('/schemes', (req, res) => {
           res.redirect('check-final-details')
         });
 
+        //check final details page
+        router.post('/check-final-details', (req, res) => {
+          res.redirect('calculation-result')
+        });
+
+        //Calculation result page
+        router.post('/calculation-result', (req, res) => {
+          res.redirect('quality-check')
+        });
+
+        // Quality check page
+        router.post('/quality-check', (req, res) => {
+          const selection = req.session.data['checking']
+  
+          if (selection == 'yes') {
+            //redirect to download successful page
+            res.redirect('download-files');
+          } else {
+            //redirect to EA email address page
+            res.redirect('ea-email-address');
+          }
+          });
+
+          // Ea Email address page
+          router.post('/ea-email-address', (req, res) => {
+            res.redirect('upload-files')
+          });
+
+
+
+
 
 
 
