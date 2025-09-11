@@ -87,6 +87,8 @@ router.post('/schemes', (req, res) => {
 
       if (number === '123456789' || number === '123456787' || number === '123456786') {
       res.redirect('complexity-check')
+      } else if (number === '123456779') {
+        res.redirect('complexity-found')
     } else {
       res.redirect('membership-number-not-found')
     }
@@ -217,6 +219,55 @@ router.post('/schemes', (req, res) => {
           router.post('/ea-email-address', (req, res) => {
             res.redirect('upload-files')
           });
+
+          //Complexity check clean page
+          router.post('/complexity-check-clean', (req, res) => {
+            const selection = req.session.data['check']
+    
+            if (selection == 'yes') {
+              //redirect to partial data found page
+              res.redirect('partial-member-details-found');
+            } else {
+              //redirect to kickout page
+              res.redirect('cannot-be-calculated');
+            }
+            });
+
+            // Partial member details found page
+            router.post('/partial-member-details-found', (req, res) => {
+              const selection = req.session.data['partialDetails']
+      
+              if (selection == 'yes') {
+                //redirect to download successful page
+                res.redirect('complete-member-details');
+              } else {
+                //redirect to EA email address page
+                res.redirect('ea-number');
+              }
+              });
+
+              //Download files page
+              router.post('/download-files', (req, res) => {
+                //direct back to the start page
+                res.redirect('start')
+              });
+
+              //Upload files page
+              router.post('/upload-files', (req, res) => {
+                //direct back to the start page
+                res.redirect('start')
+              });
+
+              //Scheme start date add page
+              router.post('/start-date-added', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('complete-member-details')
+              });
+             
+
+
+
+
 
 
 
