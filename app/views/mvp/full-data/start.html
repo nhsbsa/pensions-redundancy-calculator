@@ -27,13 +27,6 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-{% from 'back-link/macro.njk' import backLink %}
-
-{{ backLink({
-  "href": "javascript:history.go(-1)",
-  "text": "Go back"
-}) }}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
@@ -49,25 +42,37 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
-              <form action="balance-carry-forward-add" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What is the balance to carry forward figure for the current year?</h1>
-            
-              <p>This figure can be found on the Annual Accrued Pension set in the member's record on Compendia.</p>
+              <h1>Get a redundancy estimate</h1>
+              <p>Use this service to calculate redundancy estimates for NHS Pension Scheme members.</p>
+              <h2>Before you start</h2>
+              <p>We can only calculate redundancy estimates for members who:</p>
+              <ul>
+                <li>have at least 2 years' qualifying membership within the Scheme</li>
+                <li>have 2 years' continuous service verified by the employer</li>
+                <li>have reached the minimum pension age of the Scheme they are part of</li>
+                <li>do not have a GP practice as their employing authority</li>
+                <li>if they are part of a direction body, have redundancy provisions in place</li>
+                <li>are classed as officer cases</li>
+              </ul>
 
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="example">
-                  Balance to carry forward
-                </label>
-                <div class="nhsuk-input__wrapper">
-                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-10" id="example" name="balanceAdd" type="text">
-                </div>
-              </div>
+              {% from 'inset-text/macro.njk' import insetText %}
 
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-              </form>
+{{ insetText({
+  html: "<p>If a member does not meet all these criteria,  you need to inform the requesting employer that we cannot provide an estimate.</p>"
+}) }}
+      
+              <h2>Completing the calculation</h2>
+      
+              <p>When you start the calculation, we'll ask you to enter all the member data we need to get an estimate. After the data is submitted, the service will create 2 documents:</p>
+              <ul>
+                <li>A calculation sheet</li>
+                <li>An estimate letter - you need to send this to the employer</li>
+              </ul>
+      
+              <a class="nhsuk-button" data-module="nhsuk-button" href="schemes" draggable="false" role="button">
+                Start now
+              </a>
       
             </div>
           </div>

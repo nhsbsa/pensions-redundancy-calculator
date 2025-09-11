@@ -14,4 +14,6 @@ router.post('/clear-session-data/', (req, res) => {
 
 router.use('/mvp', require('./views/mvp/_routes'));
 
+router.use('/mvp/full-data', require('./views/mvp/full-data/_routes1'));
+
 module.exports = router;

@@ -30,8 +30,8 @@
 {% from 'back-link/macro.njk' import backLink %}
 
 {{ backLink({
-  "href": "javascript:history.go(-1)",
-  "text": "Go back"
+  href: "schemes",
+  text: "Go back"
 }) }}
 
   <div class="nhsuk-grid-row">
@@ -49,25 +49,21 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
-              <form action="balance-carry-forward-add" method="post" class="form">
+              <form action="kickout" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What is the balance to carry forward figure for the current year?</h1>
-            
-              <p>This figure can be found on the Annual Accrued Pension set in the member's record on Compendia.</p>
+              <h1 class="nhsuk-heading-l">We cannot calculate an estimate for this member</h1>
+              <p>Currently, we can only give an estimate for members in the 2015 Scheme.</p>
+              <p>For members of these Schemes, you'll need to request the case be allocated to another pension admin:</p>
 
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="example">
-                  Balance to carry forward
-                </label>
-                <div class="nhsuk-input__wrapper">
-                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-10" id="example" name="balanceAdd" type="text">
-                </div>
-              </div>
+              <ul>
+                <li>1995 Scheme only</li>
+                <li>1995 and 2015 Schemes</li>
+                <li>2008 and 2015 Schemes</li>
+              </ul>
 
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-              </form>
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start a new calculation</button>
+            </form>
+
       
             </div>
           </div>

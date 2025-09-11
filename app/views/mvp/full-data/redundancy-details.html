@@ -49,22 +49,32 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
-              <form action="balance-carry-forward-add" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What is the balance to carry forward figure for the current year?</h1>
+              <h1 class="nhsuk-heading-l">How were the redundancy details received?</h1>
             
-              <p>This figure can be found on the Annual Accrued Pension set in the member's record on Compendia.</p>
-
+              <p>For multiple redundancy requests from the employer, the details will usually be received using the bulk spreadsheet. For single requests, they will often come using the AW295 form.</p>
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="example">
-                  Balance to carry forward
-                </label>
-                <div class="nhsuk-input__wrapper">
-                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-10" id="example" name="balanceAdd" type="text">
-                </div>
+
+                <fieldset class="nhsuk-fieldset">
+                  <form action="redundancy-details" method="post" class="form">
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example" name="receivedBy" type="radio" value="spreadsheet">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                        Employing authority bulk spreadsheet
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="receivedBy" type="radio" value="form">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        AW295 form
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
+
+              
 
                 <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
               </form>

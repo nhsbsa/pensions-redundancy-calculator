@@ -1,0 +1,211 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+<!-- For adding a breadcrumb or back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Go back"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+      
+              <h1 class="nhsuk-heading-l">Complexity check</h1>
+              
+              
+              <p>The member's record was checked for all of the complexitites listed.</p>
+
+              <table class="nhsuk-table">
+                <thead class="nhsuk-table__head">
+                  <tr class="nhsuk-table__row">
+                    <th class="nhsuk-table__header" scope="col"> Complexity type </th>
+                    <th class="nhsuk-table__header" scope="col"> Status </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Pension on divorce
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Additional pension
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Early retirement reduction buy out (ERRBO)
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Transfers
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Over the normal pension age
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+
+            </td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              McCloud comparison calculation
+            </td>
+            <td class="nhsuk-table__cell">
+      
+              <strong class="nhsuk-tag nhsuk-tag--green">
+        Not found
+      </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Gap in service membership of over 5 years
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+              
+                    </td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">
+                      Practitioner member
+                    </td>
+                    <td class="nhsuk-table__cell">
+              
+                      <strong class="nhsuk-tag nhsuk-tag--green">
+                Not found
+              </strong>
+              
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+
+              {% from 'inset-text/macro.njk' import insetText %}
+              {{ insetText({
+                html: "<p>You should check the relevant sets in the member's record to see if any complexities that are found are valid. If the complexity is not relevant to the case, you can continue with the calculation.</p>"
+              }) }}
+
+              <div class="nhsuk-form-group">
+                <form action="complexity-check" method="post" class="form">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    <h1 class="nhsuk-fieldset__heading">
+                      Would you like to continue with the calculation?
+                    </h1>
+                  </legend>
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example" name="check" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="check" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+
+  
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+            </form>
+      
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

@@ -50,15 +50,10 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
       
-              <h1 class="nhsuk-heading-l">Complete the member's details</h1>
+              <h1 class="nhsuk-heading-l">Check the member's details</h1>
               
               
-              <p>Some of the details provided have been pulled from the member's record in Compendia. You will need to add in the member's details that have not been found. All details should be checked to make sure the most recent information has been collected.</p>
-
-              {% from 'inset-text/macro.njk' import insetText %}
-              {{ insetText({
-                html: "<p>If there are any errors, or no data has been provided, you will need to change or add the member's details.</p>"
-              }) }}
+              <p>All the details provided have been taken from the member's record in Compendia. If there are any errors with the data, you will need to change the member's details.</p>
 
               <h3>Member details</h3>
 
@@ -149,8 +144,8 @@
                     {{ data['startDay'] }} {{ data['startMonth'] }} {{ data['startYear'] }}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                    <a href="scheme-start-date-add">
-                      Add<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    <a href="#">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
                     </a>
                   </dd>
                 </div>
@@ -162,8 +157,8 @@
                     {{ data['balanceAdd']}}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                    <a href="balance-carry-forward-add">
-                      Add<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    <a href="#">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
                     </a>
                   </dd>
                 </div>
@@ -233,9 +228,13 @@
                 </div>
               </dl>
 
-
+              {% from 'inset-text/macro.njk' import insetText %}
+              {{ insetText({
+                html: "<p>Check that all of the member's details listed are correct before you continue.</p>"
+              }) }}
+              <form action="check-member-details-amendments" method="post" class="form">
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-      
+            </form>
             </div>
           </div>
         </main>
