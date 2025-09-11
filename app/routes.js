@@ -16,4 +16,6 @@ router.use('/mvp', require('./views/mvp/_routes'));
 
 router.use('/mvp/full-data', require('./views/mvp/full-data/_routes1'));
 
+router.use('/mvp/partial-data', require('./views/mvp/partial-data/_routes2'));
+
 module.exports = router;
