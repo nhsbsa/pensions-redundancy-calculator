@@ -257,7 +257,7 @@ router.post('/schemes', (req, res) => {
               //Scheme start date add page
               router.post('/scheme-start-date-add', (req, res) => {
                 //direct to complete member details page 
-                res.redirect('complete-member-details')
+                res.redirect('complete-member-details-added')
               });
              
               //Balance carry forward add page
