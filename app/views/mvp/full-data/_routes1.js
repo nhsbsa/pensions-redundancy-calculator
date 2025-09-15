@@ -118,6 +118,16 @@ router.post('/schemes', (req, res) => {
 
       //Check member details page
       router.post('/check-member-details', (req, res) => {
+        res.redirect('employment-hours-current')
+      });
+
+      //Employment hours current page (whole time / part time)
+      router.post('/employment-hours', (req, res) => {
+        res.redirect('reckonable-service-current')
+      });
+
+      //Reckonable service page (years and days)
+      router.post('/reckonable-service', (req, res) => {
         res.redirect('redundancy-details')
       });
 
