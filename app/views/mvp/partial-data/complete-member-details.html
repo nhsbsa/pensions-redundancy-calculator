@@ -57,7 +57,7 @@
 
               {% from 'inset-text/macro.njk' import insetText %}
               {{ insetText({
-                html: "<p>If there are any errors, or no data has been provided, you will need to change or add the member's details.</p>"
+                html: "<p>If there are any errors, you will need to change the member's details.</p>"
               }) }}
 
               <h3>Member details</h3>
@@ -141,32 +141,6 @@
                     </a>
                   </dd>
                 </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    First date of scheme membership
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {{ data['startDay'] }} {{ data['startMonth'] }} {{ data['startYear'] }}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="scheme-start-date-add">
-                      Add<span class="nhsuk-u-visually-hidden"> contact information</span>
-                    </a>
-                  </dd>
-                </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Balance to carry forward (current year)
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    {{ data['balanceAdd']}}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="balance-carry-forward-add">
-                      Add<span class="nhsuk-u-visually-hidden"> contact information</span>
-                    </a>
-                  </dd>
-                </div>
               </dl>
 
               <h3>Pensionable earnings</h3>
@@ -220,9 +194,17 @@
                 </div>
               </dl>
 
+              <h3>Next steps</h3>
+              <p>You will be asked to add in the member's details that were not located.</p>
+              <p>The member details that were not located were:</p>
+              <ul>
+                <li>First date of scheme membership</li>
+                <li>Balance to carry forward (current year)</li>
+              </ul>
 
+              <form action="complete-member-details" method="post" class="form">
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-      
+            </form>
             </div>
           </div>
         </main>

@@ -50,10 +50,32 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
       
-              <h1 class="nhsuk-heading-l">Check the details before getting the estimate</h1>
+              <h1 class="nhsuk-heading-l">Complete the member's details</h1>
+
+              <div class="nhsuk-width-container">
               
+                <main class="nhsuk-main-wrapper" id="maincontent">
+                  <div class="nhsuk-grid-row">
+                      <form action="/form-handler" method="post" novalidate>
               
-              <p>These are the details for the member's 2015 Scheme redundancy retirement estimate. If any information needs to be changed, select the relevant change link.</p>
+                        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="nhsuk-error-summary">
+                          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                          </h2>
+                          <div class="nhsuk-error-summary__body">
+                            <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+                              <li> <a href="#dob-errors-year">First date of scheme membership date must be entered <br>Balance to carry forward (current year) figure must be entered</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+              
+              <p>Some of the details provided have been pulled from the member's record in Compendia. You will need to add in the member's details that have not been found. All details should be checked to make sure the most recent information has been collected.</p>
+
+              {% from 'inset-text/macro.njk' import insetText %}
+              {{ insetText({
+                html: "<p>If there are any errors, or no data has been provided, you will need to change or add the member's details.</p>"
+              }) }}
 
               <h3>Member details</h3>
 
@@ -144,8 +166,8 @@
                     {{ data['startDay'] }} {{ data['startMonth'] }} {{ data['startYear'] }}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    <a href="scheme-start-date-add">
+                      Add<span class="nhsuk-u-visually-hidden"> contact information</span>
                     </a>
                   </dd>
                 </div>
@@ -157,8 +179,8 @@
                     {{ data['balanceAdd']}}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    <a href="balance-carry-forward-add">
+                      Add<span class="nhsuk-u-visually-hidden"> contact information</span>
                     </a>
                   </dd>
                 </div>
@@ -215,74 +237,9 @@
                 </div>
               </dl>
 
-              <h3>Scheme membership</h3>
-              <dl class="nhsuk-summary-list">
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Total reckonable service
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  2 years 239 days
-                </dd>
-                <dd class="nhsuk-summary-list__actions">
-                  <a href="#">
-                    Change<span class="nhsuk-u-visually-hidden"> contact information</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-              
 
-              <h3>Redundancy details</h3>
-              <dl class="nhsuk-summary-list">
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Date of estimate
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    31 December 2025
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                      Change<span class="nhsuk-u-visually-hidden"> name</span>
-                    </a>
-                  </dd>
-                </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Estimated 2015 pensionable pay from 1 April to date of estimate
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    £{{ data['pensionablePay']}}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="#">
-                      Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
-                    </a>
-                  </dd>
-                </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Redundancy payment
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                   £{{ data['redundancyPay']}}
-                  </dd>
-                  <dd class="nhsuk-summary-list__actions">
-                    <a href="redundancy-pay-spreadsheet">
-                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-
-              <h3>Get the estimate</h3>
-              <p>The details that have been provided will be used to create the calculation sheet and the redundancy estimate letter.</p>
-
-              
-              <form action="check-final-details" method="post" class="form">
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-            </form>
+      
             </div>
           </div>
         </main>

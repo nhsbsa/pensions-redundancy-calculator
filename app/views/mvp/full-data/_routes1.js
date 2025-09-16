@@ -281,6 +281,25 @@ router.post('/schemes', (req, res) => {
                 //direct to complete member details page 
                 res.redirect('redundancy-details')
               });
+
+              //Scheme start date page (manual data entry)
+              router.post('/start-date', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('balance-carry-forward')
+              });
+
+              //Balance to carry forward page (manual data entry)
+              router.post('/balance-forward', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('employment-hours-current1')
+              });
+
+              //Employment hours current1 (manual data entry)
+              router.post('/employment-hours1', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('reckonable-service-current1')
+              });
+
               
 
 

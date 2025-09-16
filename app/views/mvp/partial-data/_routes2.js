@@ -269,8 +269,42 @@ router.post('/schemes', (req, res) => {
               //Check member details amendments page
               router.post('/check-member-details-amendments', (req, res) => {
                 //direct to complete member details page 
+                res.redirect('employment-hours-current')
+              });
+
+              //Complete member details page
+              router.post('/complete-member-details', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('scheme-start-date')
+              });
+
+              //Scheme start date page
+              router.post('/scheme-start-date', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('balance-carry-forward')
+              });
+
+              //Balance carry forward page
+              router.post('/balance-carry-forward', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('check-member-details-amendments')
+              });
+
+              //Employment hours current page
+              router.post('/employment-hours', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('reckonable-service-current')
+              });
+
+              //Reckonable service current page
+              router.post('/reckonable-service', (req, res) => {
+                //direct to complete member details page 
                 res.redirect('redundancy-details')
               });
+
+
+              // {{ data['startDay'] }} {{ data['startMonth'] }} {{ data['startYear'] }} use this for first date of scheme membership view of date entered in page
+              // {{ data['balanceAdd']}} this to be used for balance to carry forward current year value in the check member details page
               
 
 
