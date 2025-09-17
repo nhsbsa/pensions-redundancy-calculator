@@ -31,7 +31,15 @@ router.post('/schemes', (req, res) => {
 
     //Membership number not found page
     router.post('/membership-error', (req, res) => {
-      res.redirect('membership-number')
+      const select = req.session.data['check']
+  
+      if (select == 'yes') {
+        // Redirect to EA number page
+        res.redirect('ea-number');
+      } else {
+        // If no back to the membership number page
+        res.redirect('membership-number');
+      }
     });
 
     //EA number page
