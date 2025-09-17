@@ -205,7 +205,7 @@ router.post('/schemes', (req, res) => {
 
         //Calculation result page
         router.post('/calculation-result', (req, res) => {
-          res.redirect('consolidation-download')
+          res.redirect('quality-check')
         });
 
         // Quality check page
