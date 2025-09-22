@@ -134,8 +134,18 @@ router.post('/schemes', (req, res) => {
         res.redirect('reckonable-service-current')
       });
 
-      //Reckonable service page (years and days)
+      //Reckonable service current page (non manual data entry route)
       router.post('/reckonable-service', (req, res) => {
+        res.redirect('redundancy-details')
+      });
+
+      //Total pensionable earnings page
+      router.post('/pensionable-earnings', (req, res) => {
+        res.redirect('redundancy-details')
+      });
+
+      //Total pensionable earnings added page
+      router.post('/pensionable-earnings-added', (req, res) => {
         res.redirect('redundancy-details')
       });
 
@@ -306,6 +316,12 @@ router.post('/schemes', (req, res) => {
               router.post('/employment-hours1', (req, res) => {
                 //direct to complete member details page 
                 res.redirect('reckonable-service-current1')
+              });
+
+              //Reckonable service current 1 (manual data entry)
+              router.post('/reckonable-service-manual', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('total-pensionable-earnings')
               });
 
               
