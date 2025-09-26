@@ -21,62 +21,73 @@
 
 <!-- For adding a breadcrumb or back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block beforeContent %}
-{% endblock %}
+{% block beforeContent %} {% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}
-{% from 'back-link/macro.njk' import backLink %}
+{% block content %} {% from 'back-link/macro.njk' import backLink %} {{
+backLink({ "href": "javascript:history.go(-1)", "text": "Go back" }) }}
 
-{{ backLink({
-  "href": "javascript:history.go(-1)",
-  "text": "Go back"
-}) }}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <!-- You can delete the lines below -->
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-three-quarters">
+    <!-- Add your content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <!-- You can delete the lines below -->
-     
+    <div class="nhsuk-width-container">
+      <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <form action="membership-error" method="post" class="form">
+              <h1 class="nhsuk-heading-l">No details found</h1>
 
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <div class="nhsuk-width-container">
-      
-        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-              <form action="membership-error" method="post" class="form">
-      
-              <h1 class="nhsuk-heading-l">No details have been found for this membership number</h1>
-
-              <p>No member details have been found in Compendia for the membership number that was entered.</p>
+              <p>
+                No member details have been found in Compendia for the
+                membership number that was entered.
+              </p>
               <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
-                <p>Membership number<br>{{ data['memberNumber']}}</p>
+                <p>Membership number<br />{{ data['memberNumber']}}</p>
               </div>
 
               <div class="nhsuk-form-group">
-
                 <fieldset class="nhsuk-fieldset">
-                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                  <legend
+                    class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                     <h1 class="nhsuk-fieldset__heading">
-                      Would you like to continue the calculation for this member?
+                      Would you like to continue the calculation for this
+                      member?
                     </h1>
                   </legend>
                   <div class="nhsuk-radios" data-module="nhsuk-radios">
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example" name="check" type="radio" value="yes">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                      <input
+                        class="nhsuk-radios__input"
+                        id="example"
+                        name="check"
+                        type="radio"
+                        value="yes"
+                      />
+                      <label
+                        class="nhsuk-label nhsuk-radios__label"
+                        for="example"
+                      >
                         Yes, I will enter the member's details manually
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="check" type="radio" value="no">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                      <input
+                        class="nhsuk-radios__input"
+                        id="example-2"
+                        name="check"
+                        type="radio"
+                        value="no"
+                      />
+                      <label
+                        class="nhsuk-label nhsuk-radios__label"
+                        for="example-2"
+                      >
                         No
                       </label>
                     </div>
@@ -84,17 +95,20 @@
                 </fieldset>
               </div>
 
-
-              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              <button
+                class="nhsuk-button"
+                data-module="nhsuk-button"
+                type="submit"
+              >
+                Continue
+              </button>
             </form>
-      
-            </div>
           </div>
-        </main>
-      </div>
-
-      <!-- End of content -->
-
+        </div>
+      </main>
     </div>
+
+    <!-- End of content -->
   </div>
+</div>
 {% endblock %}
