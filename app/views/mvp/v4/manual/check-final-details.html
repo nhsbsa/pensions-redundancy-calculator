@@ -1,0 +1,278 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+<!-- For adding a breadcrumb or back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Go back"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+      
+              <h1 class="nhsuk-heading-l">Check the details before getting the estimate</h1>
+              
+              
+              <p>These are the details for the member's 2015 Scheme redundancy retirement estimate. If any information needs to be changed, select the relevant change link.</p>
+
+              <h3>Member details</h3>
+
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Membership number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ data['memberNumber']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="membership-number">
+                      Change<span class="nhsuk-u-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Employing authority number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ data['eaNumber']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="ea-number">
+                      Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Mr John Smith
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="member-name">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    National Insurance number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ data['niNumber']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="ni-number">
+                      Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    1 January 1965
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="member-dob">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    State pension age
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    67 years
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="state-pension-age">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    First date of scheme membership
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    1 April 2023
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="scheme-start-date">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Balance to carry forward (current year)
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                   £{{ data['balanceForward']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="balance-carry-forward">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total reckonable service
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    2 years 239 days
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="reckonable-service-current1">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h3>Pensionable earnings</h3>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    2025 (current year)
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    £{{ data['value2025']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="total-pensionable-earnings">
+                      Change<span class="nhsuk-u-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    2024
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    £{{ data['value2024']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="total-pensionable-earnings">
+                      Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Total pensionable earnings
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    £52,313.95
+                  </dd>
+                </div>
+              </dl>
+
+              <h3>Redundancy details</h3>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date of estimate
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    31 December 2025
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="date-of-estimate-spreadsheet1">
+                      Change<span class="nhsuk-u-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Estimated 2015 pensionable pay from 1 April to date of estimate
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    £{{ data['pensionablePay']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="pensionable-earnings-april-spreadsheet1">
+                      Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Redundancy payment
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                   £{{ data['redundancyPay']}}
+                  </dd>
+                  <dd class="nhsuk-summary-list__actions">
+                    <a href="redundancy-pay-spreadsheet1">
+                      Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h3>Get the estimate</h3>
+              <p>The details that have been provided will be used to create the calculation sheet and the redundancy estimate letter.</p>
+
+              
+              <form action="check-final-details" method="post" class="form">
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+            </form>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
