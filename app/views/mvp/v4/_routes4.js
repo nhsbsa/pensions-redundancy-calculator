@@ -126,8 +126,16 @@ router.post('/schemes', (req, res) => {
 
       //Check member details page
       router.post('/check-member-details', (req, res) => {
-        res.redirect('employment-hours-current')
-      });
+        const pick = req.session.data['allDetails']
+
+        if (pick == 'yes') {
+          //redirect to date of estimate spreadsheet page
+          res.redirect('employment-hours-current');
+        } else {
+          //redirect to date of estimate form page
+          res.redirect('estimate-cannot-be-calculated');
+        }
+        });
 
       //Employment hours current page (whole time / part time)
       router.post('/employment-hours', (req, res) => {

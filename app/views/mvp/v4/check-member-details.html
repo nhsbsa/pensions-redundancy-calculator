@@ -153,11 +153,32 @@
                 </div>
               </dl>
 
-              {% from 'inset-text/macro.njk' import insetText %}
-              {{ insetText({
-                html: "<p>Check that all of the member's details listed are correct before you continue.</p>"
-              }) }}
-              <form action="check-member-details" method="post" class="form">
+              <div class="nhsuk-form-group">
+                <form action="check-member-details" method="post" class="form">
+              
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    <h2 class="nhsuk-fieldset__heading">
+                      Do the details match with the member's record on Compendia and with the data provided by the employer?
+                    </h2>
+                  </legend>
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example" name="allDetails" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                        Yes, the details match
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="allDetails" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        No, the details do not match
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
             </form>
             </div>
