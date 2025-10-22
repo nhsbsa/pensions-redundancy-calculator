@@ -50,50 +50,32 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
       
-              <h1 class="nhsuk-heading-l">Check the member's circumstances</h1>
+              <h1 class="nhsuk-heading-l">Does the case need to be checked?</h1>
+              
+              <p>The consolidation phase requires you to complete 10 cases in a row correctly. After 10 cases have been completed correctly, you are no longer in the consolidation phase.</p>
+              <p>You can check to see if the case needs to go to quality checking by booking out the case in Operations Manager (OM).</p>
+              
+              <h3>If the case needs quality checking or is part of the consolidation phase</h3>
+              <p>If the case needs to be reviewed by the quality checking team or is part of the consolidation phase then the calculation sheet and estimate letter will be downloaded onto your device. You will then need to share the documents.</p>
 
-              <div class="nhsuk-inset-text">
-                <span class="nhsuk-u-visually-hidden">Information: </span>
-                <p>If the member meets any of the listed circumstances you cannot continue with the calculation.</p>
-              </div>
-              <p><strong>Check if the member has:</strong></p>
-<ul>
-  <li>pensions on divorce debit</li>
-  <li>additional pensions (APs)</li>
-  <li>early retirement reduction buy-out (ERRBO)</li>
-  <li>transfers</li>
-  <li>breaks in service over 5 years</li>
-  <li>an earnings cap</li>
-  </ul>
-  <p><strong>Check if the member is:</strong></p>
-  <ul>
-  <li>over the normal pension age (NPA)</li>
-  <li>a McCloud comparison calculation</li>
-  <li>partially retired</li>
-  <li>a practitioner</li>
-  <li>not subject to agenda for change</li>
-</ul>
+              <h3>If the case does not need checked</h3>
+              <p>If the case does not need to go to quality checking or the consolidation phase then the files will be uploaded to the member's record in EDM.</p>
 
 <div class="nhsuk-form-group">
-  <form action="complexities-list" method="post" class="form">
+  <form action="quality-check1" method="post" class="form">
 
   <fieldset class="nhsuk-fieldset">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-      <h1 class="nhsuk-fieldset__heading">
-        Is the member affected by any of the circumstances?
-      </h1>
-    </legend>
     <div class="nhsuk-radios" data-module="nhsuk-radios">
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example" name="complexities" type="radio" value="yes">
+        <input class="nhsuk-radios__input" id="example" name="checking" type="radio" value="yes">
         <label class="nhsuk-label nhsuk-radios__label" for="example">
-          Yes
+          Yes, the case needs to go to quality checking or consolidation
         </label>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="complexities" type="radio" value="no">
+        <input class="nhsuk-radios__input" id="example-2" name="checking" type="radio" value="no">
         <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          No
+          No, the case does not need checking
         </label>
       </div>
     </div>

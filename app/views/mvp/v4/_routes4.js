@@ -388,15 +388,49 @@ router.post('/schemes', (req, res) => {
           res.redirect('redundancy-pay-spreadsheet1')
         });
 
-        //Redundancy payment form1 page
+        //Redundancy payment form1 page (manual journey)
         router.post('/manual/redundancy-pay-form1', (req, res) => {
-          res.redirect('check-final-details')
+          res.redirect('check-final-details1')
         });
 
-         //Redundancy payment spreadsheet1 page
+         //Redundancy payment spreadsheet1 page (manual journey)
          router.post('/manual/redundancy-pay-spreadsheet1', (req, res) => {
-          res.redirect('check-final-details')
+          res.redirect('check-final-details1')
         });
+
+        //check final details1 page (manual journey)
+        router.post('/manual/check-final-details1', (req, res) => {
+          res.redirect('calculation-result1')
+        });
+
+        //Calculation result1 page (manual journey)
+        router.post('/manual/calculation-result1', (req, res) => {
+          res.redirect('quality-check1')
+        });
+
+        // Quality check1 page (Manual journey)
+        router.post('/manual/quality-check1', (req, res) => {
+          const selection = req.session.data['checking']
+  
+          if (selection == 'yes') {
+            //redirect to download successful page
+            res.redirect('download-files');
+          } else {
+            //redirect to EA email address page
+            res.redirect('ea-email-address');
+          }
+          });
+
+          // Ea Email address page (manual journey)
+          router.post('/manual/ea-email-address', (req, res) => {
+            res.redirect('upload-files')
+          });
+
+          //Upload files page
+          router.post('/manual/upload-files', (req, res) => {
+            //direct back to the start page
+            res.redirect('v4/start')
+          });
 
               
 
