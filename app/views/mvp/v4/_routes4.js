@@ -130,7 +130,7 @@ router.post('/schemes', (req, res) => {
 
         if (pick == 'yes') {
           //redirect to date of estimate spreadsheet page
-          res.redirect('employment-hours-current');
+          res.redirect('reckonable-service-current');
         } else {
           //redirect to date of estimate form page
           res.redirect('estimate-cannot-be-calculated');
@@ -149,12 +149,12 @@ router.post('/schemes', (req, res) => {
 
       //Total pensionable earnings page
       router.post('/manual/pensionable-earnings', (req, res) => {
-        res.redirect('employment-hours-current1')
+        res.redirect('reckonable-service-current1')
       });
 
       //Total pensionable earnings added page
       router.post('/manual/pensionable-earnings-added', (req, res) => {
-        res.redirect('employment-hours-current1')
+        res.redirect('reckonable-service-current1')
       });
 
       //Redundancy details page
