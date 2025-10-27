@@ -59,8 +59,26 @@ router.post('/schemes', (req, res) => {
 
     //Date of birth page
     router.post('/manual/date-of-birth', (req, res) => {
-      res.redirect('state-pension-age')
+      // Get the values entered
+      const day = req.session.data['birthDay'];
+      const month = req.session.data['birthMonth'];
+      const year = req.session.data['birthYear'];
+    
+      // Check if the entered date is 10 12 1980
+      if (day === '10' && month === '12' && year === '1980') {
+        // send to under 55 at redundancy page
+        res.redirect('under-55');
+      } else {
+        // Otherwise send them to
+        res.redirect('state-pension-age');
+      }
     });
+
+    //Under 55 page
+    router.post('/manual/under-55', (req, res) => {
+      res.redirect('start')
+    });
+
    
     //Complexities list page
     router.post('/complexities-list', (req, res) => {
@@ -177,8 +195,8 @@ router.post('/schemes', (req, res) => {
           const month = req.session.data['estimateMonth'];
           const year = req.session.data['estimateYear'];
         
-          // Check if the entered date is 01 01 1990
-          if (day === '01' && month === '1' && year === '1980') {
+          // Check if the entered date is 01 11 2025
+          if (day === '01' && month === '11' && year === '2025') {
             // send to under 55 at redundancy page
             res.redirect('under-55-at-redundancy');
           } else {
@@ -194,8 +212,8 @@ router.post('/schemes', (req, res) => {
           const month = req.session.data['estimateMonth'];
           const year = req.session.data['estimateYear'];
         
-          // If the entered date is 01 01 1980
-          if (day === '01' && month === '1' && year === '1980') {
+          // If the entered date is 01 11 2025
+          if (day === '01' && month === '11' && year === '2025') {
             // send to under 55 at redundancy page
             res.redirect('under-55-at-redundancy');
           } else {
@@ -430,6 +448,12 @@ router.post('/schemes', (req, res) => {
           router.post('/manual/upload-files', (req, res) => {
             //direct back to the start page
             res.redirect('v4/start')
+          });
+
+          //Download files manual journey page
+          router.post('/manual/download-files', (req, res) => {
+            //direct back to the start page
+            res.redirect('start')
           });
 
               

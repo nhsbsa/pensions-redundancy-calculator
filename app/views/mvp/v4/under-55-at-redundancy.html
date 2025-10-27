@@ -4,8 +4,6 @@
 
 <!-- Extends the layout from /app/views/layout.html -->
 {% extends 'layout.html' %}
-
-
 <!--
   In /app/views/layout.html you can:
     - change the header and footer
@@ -29,6 +27,13 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Go back"
+}) }}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
@@ -44,36 +49,17 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-      
-              <h1>Get a redundancy estimate</h1>
-              <p>Use this service to calculate redundancy estimates for NHS Pension Scheme members.</p>
-              <h2>Before you start</h2>
-              <p>We can only calculate redundancy estimates for members who:</p>
-              <ul>
-                <li>have at least 2 years of qualifying membership within the Scheme</li>
-                <li>have 2 years of continuous service verified by the employer</li>
-                <li>have reached the minimum pension age of the Scheme they are part of</li>
-                <li>do not have a GP practice as their employing authority</li>
-                <li>are part of a direction body, have redundancy provisions in place</li>
-              </ul>
 
-              {% from 'inset-text/macro.njk' import insetText %}
+              <form action="under-55-at-redundancy" method="post" class="form">
+      
+              <h1 class="nhsuk-heading-l">We cannot give an estimate for this member</h1>
+            
+              <p>The member will be under the age of 55 on the date of redundancy.</p>
 
-{{ insetText({
-  html: "<p>If a member does not meet all of the criteria,  you need to inform the requesting employer that we cannot provide an estimate.</p>"
-}) }}
-      
-              <h2>Completing the calculation</h2>
-      
-              <p>When you start the calculation, we'll ask you to enter all the member data we need to get an estimate. After the data is submitted, the service will create 2 documents:</p>
-              <ul>
-                <li>a calculation sheet</li>
-                <li>an estimate letter, which needs to be sent to the employer</li>
-              </ul>
-      
-              <a class="nhsuk-button" data-module="nhsuk-button" href="schemes" draggable="false" role="button">
-                Start now
-              </a>
+              <p>This means they cannot receive a redundancy estimate or access their pension benefits.</p>
+
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start a new calculation</button>
+              </form>
       
             </div>
           </div>

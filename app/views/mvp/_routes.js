@@ -142,7 +142,7 @@ router.post('/schemes', (req, res) => {
           const year = req.session.data['estimateYear'];
         
           // Check if the entered date is 01 01 1990
-          if (day === '01' && month === '1' && year === '1980') {
+          if (day === '01' && month === '11' && year === '2025') {
             // send to under 55 at redundancy page
             res.redirect('under-55-at-redundancy');
           } else {
