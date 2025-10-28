@@ -98,7 +98,7 @@ router.post('/schemes', (req, res) => {
         // Redirect to Check member details page
         res.redirect('check-member-details');
       } else {
-        // Redirect to EA number page (manual data entry)
+        // Redirect to EA number page
         res.redirect('ea-number');
       }
     });
