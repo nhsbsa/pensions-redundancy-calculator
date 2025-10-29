@@ -32,22 +32,32 @@
 <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
   {{ footer({
+    
     links: [
+
       {
         URL: "/",
-        label: "Home"
+        label: "Privacy"
       },
+
       {
-        URL: "/example-templates",
-        label: "Page templates"
+        URL: "/",
+        label: "Cookies"
       },
+
       {
-        URL: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
-        label: "Reset data"
+        URL: "/",
+        label: "Terms and conditions"
       },
+
+      {
+        URL: "/",
+        label: "Freedom of information"
+      },
+      
       {
         URL: "#",
-        label: "Accessibility statement"
+        label: "Accessibility"
       }
     ]
   }) }}
