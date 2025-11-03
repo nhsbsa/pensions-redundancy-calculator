@@ -2,7 +2,7 @@
 
 module.exports = {
   // Service name
-  serviceName: 'Redundancy Calculator',
+  serviceName: 'Pension Estimate Calculator',
 
   // Port to run nodemon on locally
   port: 2000,
