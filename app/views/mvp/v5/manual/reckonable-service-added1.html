@@ -1,0 +1,150 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+<!-- For adding a breadcrumb or back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{{ backLink({
+  "href": "javascript:history.go(-1)",
+  "text": "Go back"
+}) }}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+
+    
+              <div class="nhsuk-form-group">
+                <form action="reckonable-service" method="post" class="form">
+                  <div class="nhsuk-form-group">
+
+                    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                          Enter the member's reckonable service
+                        </h1>
+                      </legend>
+
+                      <p>The reckonable service figures are found in the Service Total views set in Compendia.</p>
+                      <p>This information is needed as it is shown on the member's estimate letter.</p>
+                      <p>If there are breaks in service in the current scheme that are less than 5 years, you can add each service period separately.</p>
+
+                      {% from 'inset-text/macro.njk' import insetText %}
+                      {% set insetTextHtml %}
+                      <p>If there are breaks in service that are over 5 years, the case will require a split benefit calculation and will need to be reallocated to another pension admin.</p>
+                      {% endset %}
+                      {{ insetText({
+                        html: insetTextHtml
+                      }) }}
+                      
+                      <h4>Time in current employment</h4>
+                      <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-quarter">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="years">
+                              Years
+                            </label>
+                            <input class="nhsuk-input nhsuk-input--width-4" id="years" name="years" type="text">
+                          </div>
+                        </div>
+                      
+                        <div class="nhsuk-grid-column-one-quarter">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="days">
+                              Days
+                            </label>
+                            <input class="nhsuk-input nhsuk-input--width-4" id="days" name="days" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </fieldset>
+                  </div>       
+                </div>
+
+                <h4>Time in previous employment</h4>
+                      <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-one-quarter">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="years">
+                              Years
+                            </label>
+                            <input class="nhsuk-input nhsuk-input--width-4" id="years" name="years" type="text">
+                          </div>
+                        </div>
+                      
+                        <div class="nhsuk-grid-column-one-quarter">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label" for="days">
+                              Days
+                            </label>
+                            <input class="nhsuk-input nhsuk-input--width-4" id="days" name="days" type="text">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <p><a href="reckonable-service-current">Delete this period</a</p>
+                      
+                    </fieldset>
+                  </div>       
+                </div>
+
+
+                <div>
+                  <a href="reckonable-service-added-2" class="nhsuk-button nhsuk-button--secondary" role="button">
+                    Add another service period
+                  </a>
+                </div>
+               
+                
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              </form>
+      
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
