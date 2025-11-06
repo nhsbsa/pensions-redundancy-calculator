@@ -1,9 +1,8 @@
 // Import NHS.UK frontend library
-@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+@import 'nhsuk-frontend/dist/nhsuk';
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
-@import 'components/related-nav';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
@@ -13,4 +12,30 @@
 a:visited {
     color: #005eb8; /* NHS blue */
   }
+
+  // Beta Banner
+
+.beta-banner {
+  padding: 16px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+}
+.nhsuk-phase-banner {
+  padding-top: nhsuk-spacing(2);
+  padding-bottom: nhsuk-spacing(2);
+  border-bottom: 1px solid $nhsuk-border-colour;
+}
+.nhsuk-phase-banner__content {
+@include nhsuk-font(16);
+color: $nhsuk-text-colour;
+display: table;
+margin: 0;
+}
+.nhsuk-phase-banner__content__tag {
+margin-right: 10px ;
+}
+.nhsuk-phase-banner__text {
+display: table-cell;
+vertical-align: middle;
+}
   
