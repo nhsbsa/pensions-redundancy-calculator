@@ -31,12 +31,30 @@
        bannerSuccessHref: "/mvp/v5/cookies/cookies",
        cookieVersion: 1
     }) }}
-  {{ header({
-    service: {
-      text: serviceName,
-      href: "/"
-    }
-  }) }}
+    {% from 'header/macro.njk' import header %}
+
+    {{ header({
+      logo: {
+        href: "#",
+        ariaLabel: "Manage patients homepage"
+      },
+      service: {
+        text: "Pension Estimate calculator",
+        href: "/"
+      },
+      account: {
+        items: [
+          {
+            text: "Tom Jones",
+            icon: true
+          },
+          {
+            text: "Log out",
+            href: "/"
+          }
+        ]
+      }
+    }) }}
 
   <div class="beta-banner">
     <div class="nhsuk-width-container">
