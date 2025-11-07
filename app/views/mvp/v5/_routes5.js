@@ -129,19 +129,6 @@ router.post('/schemes', (req, res) => {
       }
     });
 
-    //Complexity check page
-    router.post('/complexity-check', (req, res) => {
-      const select = req.session.data['check']
-
-      if (select == 'yes') {
-        //redirect to Full member details page
-        res.redirect('full-member-details-found');
-      } else {
-        //redirect to kickout page
-        res.redirect('cannot-be-calculated');
-      }
-      });
-
       //Check member details page
       router.post('/check-member-details', (req, res) => {
         const pick = req.session.data['allDetails']
@@ -154,16 +141,6 @@ router.post('/schemes', (req, res) => {
           res.redirect('estimate-cannot-be-calculated');
         }
         });
-
-      //Employment hours current page (whole time / part time)
-      router.post('/employment-hours', (req, res) => {
-        res.redirect('reckonable-service-current')
-      });
-
-      //Reckonable service current page (non manual data entry route)
-      router.post('/reckonable-service', (req, res) => {
-        res.redirect('redundancy-details')
-      });
 
       //Total pensionable earnings page
       router.post('/manual/pensionable-earnings', (req, res) => {
@@ -314,11 +291,6 @@ router.post('/schemes', (req, res) => {
                 res.redirect('complete-member-details')
               });
              
-              //Balance carry forward add page
-              router.post('/balance-carry-forward-add', (req, res) => {
-                //direct to complete member details page 
-                res.redirect('check-member-details-amendments')
-              });
 
               //Check member details amendments page
               router.post('/check-member-details-amendments', (req, res) => {
@@ -329,25 +301,40 @@ router.post('/schemes', (req, res) => {
               //Scheme start date page (manual data entry)
               router.post('/manual/start-date', (req, res) => {
                 //direct to complete member details page 
-                res.redirect('balance-carry-forward')
+                res.redirect('case-updated-to-recent-year')
               });
 
-              //Balance to carry forward page (manual data entry)
-              router.post('/manual/balance-forward', (req, res) => {
-                //direct to complete member details page 
-                res.redirect('total-pensionable-earnings')
+              //Is case updated to most recent financial year page (manual data entry)
+              router.post('/manual/case-updated-to-recent-year', (req, res) => {
+                const pick = req.session.data['status']
+                if (pick == 'yes') {
+                  //redirect to date of estimate spreadsheet1 page
+                  res.redirect('breaks-in-service');
+                } else {
+                  //redirect to date of estimate form1 page
+                  res.redirect('pensionable-pay-figure');
+                }
               });
 
-              //Employment hours current1 (manual data entry)
-              router.post('/manual/employment-hours1', (req, res) => {
+              //what is the total pensionable pay figure page
+              router.post('/manual/pensionable-pay-figure', (req, res) => {
                 //direct to complete member details page 
-                res.redirect('reckonable-service-current1')
+                res.redirect('breaks-in-service')
               });
 
-              //Reckonable service current 1 (manual data entry)
-              router.post('/manual/reckonable-service-manual', (req, res) => {
-                //direct to complete member details page 
-                res.redirect('redundancy-details1')
+              //Breaks in service page (manual data entry)
+              router.post('/manual/breaks-in-service', (req, res) => {
+                const pick = req.session.data['breaks']
+                if (pick == 'yes5') {
+                  //redirect to kickout screen as more than 5 years breaks in service
+                  res.redirect('breaks-in-service-kickout');
+                } else if (pick === 'yes') {
+                  // Redirect to scheme-year-breaks page
+                  res.redirect('scheme-year-breaks');
+                } else {
+                  //redirect to date of estimate form1 page
+                  res.redirect('total-pensionable-earnings');
+                }
               });
 
               //Redundancy details1 page

@@ -45,19 +45,17 @@
 
     
               <div class="nhsuk-form-group">
-                <form action="reckonable-service" method="post" class="form">
+                <form action="reckonable-service-manual" method="post" class="form">
                   <div class="nhsuk-form-group">
 
                     <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
                       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                         <h1 class="nhsuk-fieldset__heading">
-                          Enter the member's reckonable service
+                          Enter the scheme years where there are breaks in service
                         </h1>
                       </legend>
 
-                      <p>The reckonable service figures are found in the Service Total views set in Compendia.</p>
-                      <p>This information is needed as it is shown on the member's estimate letter.</p>
-                      <p>If there are breaks in service in the current scheme that are less than 5 years, you can add each service period separately.</p>
+                      <p>The pensionable earnings figures for each Scheme year are in the Annual accrued pension set in Compendia. Enter the years where there are zero values / no data shown in the Sum of Employer pay column.</p>
 
                       {% from 'inset-text/macro.njk' import insetText %}
                       {% set insetTextHtml %}
@@ -67,62 +65,27 @@
                         html: insetTextHtml
                       }) }}
                       
-                      <h4>Time in current employment</h4>
+
                       <div class="nhsuk-grid-row">
                         <div class="nhsuk-grid-column-one-quarter">
                           <div class="nhsuk-form-group">
                             <label class="nhsuk-label" for="years">
-                              Years
+                              Scheme year
                             </label>
-                            <input class="nhsuk-input nhsuk-input--width-4" id="years" name="years" type="text">
+                            <input class="nhsuk-input nhsuk-input--width-4" id="years" name="reckonableYears" type="text">
                           </div>
                         </div>
-                      
-                        <div class="nhsuk-grid-column-one-quarter">
-                          <div class="nhsuk-form-group">
-                            <label class="nhsuk-label" for="days">
-                              Days
-                            </label>
-                            <input class="nhsuk-input nhsuk-input--width-4" id="days" name="days" type="text">
-                          </div>
-                        </div>
-                      </div>
                       
                     </fieldset>
                   </div>       
                 </div>
 
-                <h4>Time in previous employment</h4>
-                      <div class="nhsuk-grid-row">
-                        <div class="nhsuk-grid-column-one-quarter">
-                          <div class="nhsuk-form-group">
-                            <label class="nhsuk-label" for="years">
-                              Years
-                            </label>
-                            <input class="nhsuk-input nhsuk-input--width-4" id="years" name="years" type="text">
-                          </div>
-                        </div>
-                      
-                        <div class="nhsuk-grid-column-one-quarter">
-                          <div class="nhsuk-form-group">
-                            <label class="nhsuk-label" for="days">
-                              Days
-                            </label>
-                            <input class="nhsuk-input nhsuk-input--width-4" id="days" name="days" type="text">
-                          </div>
-                        </div>
-                        
-                      </div>
-                      <p><a href="reckonable-service-current1">Delete this period</a</p>
-                      
-                    </fieldset>
-                  </div>       
-                </div>
+                
 
 
                 <div>
-                  <a href="reckonable-service-added-2" class="nhsuk-button nhsuk-button--secondary" role="button">
-                    Add another service period
+                  <a href="scheme-year-breaks-add" class="nhsuk-button nhsuk-button--secondary" role="button">
+                    Add another year
                   </a>
                 </div>
                

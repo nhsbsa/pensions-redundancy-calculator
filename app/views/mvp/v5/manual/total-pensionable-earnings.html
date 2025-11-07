@@ -24,83 +24,63 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
 
+    <div class="nhsuk-width-container">
+      <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-three-quarters">
+            <form action="pensionable-earnings" method="post" class="form">
+              <fieldset class="nhsuk-fieldset" aria-describedby="earnings-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Enter the sum of employer pay figures for all years
+                  </h1>
+                </legend>
 
-      <!-- You can delete the lines below -->
-     
+                <p>
+                  The pensionable earnings figures for each Scheme year are in the Annual accrued pension set in Compendia.
+                  The value for each Scheme year is shown in the Sum of employer pay column.
+                </p>
 
+                {% from 'inset-text/macro.njk' import insetText %}
+                {{ insetText({
+                  html: '<p>You should enter the Sum of employer pay figure for the most recent Scheme year first.</p>'
+                }) }}
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <div class="nhsuk-width-container">
-      
-        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-
-
-    
-              <div class="nhsuk-form-group">
-                <form action="pensionable-earnings" method="post" class="form">
-                  <div class="nhsuk-form-group">
-
-                    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-                      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-                        <h1 class="nhsuk-fieldset__heading">
-                          Find the total of all pensionable earnings
-                        </h1>
-                      </legend>
-
-                      <p>The pensionable earnings figures for each Scheme year are in the Annual accrued pension set in Compendia. The value for each Scheme year is shown in the Sum of employer pay column.</p>
-
-                      {% from 'inset-text/macro.njk' import insetText %}
-                      {% set insetTextHtml %}
-                      <p>You should enter the Sum of employer pay figure for the most recent Scheme year first.</p>
-                      {% endset %}
-                      {{ insetText({
-                        html: insetTextHtml
-                      }) }}
-                     <div class="nhsuk-form-group">
-                        <label class="nhsuk-label" for="example">
-                          2025 
-                        </label>
-                        <div class="nhsuk-input__wrapper">
-                          <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                          <input class="nhsuk-input nhsuk-input--width-5" id="example" name="value2025" type="text">
-                        </div>
-                      </div>
-
-                      <div class="nhsuk-form-group">
-                        <label class="nhsuk-label" for="example">
-                          2024
-                        </label>
-                        <div class="nhsuk-input__wrapper">
-                          <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                          <input class="nhsuk-input nhsuk-input--width-5" id="example" name="value2024" type="text">
-                        </div>
-                      </div>
-
-                <div>
-                  <a href="total-pensionable-earnings-added" class="nhsuk-button nhsuk-button--secondary" role="button">
-                    Add another year
-                  </a>
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="value2025">
+                    Scheme year 2025
+                  </label>
+                  <div class="nhsuk-input__wrapper">
+                    <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="nhsuk-input nhsuk-input--width-5" id="value2025" name="value2025" type="text">
+                  </div>
                 </div>
-               
-                
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-              </form>
-      
-            </div>
+
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label" for="value2024">
+                    Scheme year 2024
+                  </label>
+                  <div class="nhsuk-input__wrapper">
+                    <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                    <input class="nhsuk-input nhsuk-input--width-5" id="value2024" name="value2024" type="text">
+                  </div>
+                </div>
+              </fieldset>
+
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Continue
+              </button>
+            </form>
+
           </div>
-        </main>
-      </div>
-
-      <!-- End of content -->
-
+        </div>
+      </main>
     </div>
+
   </div>
+</div>
 {% endblock %}
