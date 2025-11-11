@@ -1,0 +1,99 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <div class="nhsuk-width-container">
+      <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+
+            <form action="annual-accrued-pension" method="post" class="form">
+              <fieldset class="nhsuk-fieldset" aria-describedby="earnings-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Check the member's annual accrued pension
+                  </h1>
+                </legend>
+
+                <p>The balance to carry forward figures have been calculated using the 'Sum of employer pay' figures that were entered. You should check over the figures before continuing.</p>
+
+                <table class="nhsuk-table">
+                  <caption class="nhsuk-table__caption">Annual accrued pension figures</caption>
+                  <thead class="nhsuk-table__head">
+                    <tr>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header">Scheme year</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header">Sum of employer pay</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header">2015 Acc pen</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header">Closing balance</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header">Factor</th>
+                      <th scope="col" class="nhsuk-table__header nhsuk-table__header">Balance to carry forward</th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr class="nhsuk-table__row">
+                      <div class="nhsuk-grid-column-full">
+                      <td class="nhsuk-table__cell nhsuk-table__cell">2023</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£3900.22</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£100.10</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£100.10</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">7.0%</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£107.20</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell nhsuk-table__cell">2024</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£14951.90</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£130.55</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£237.75</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">8.2%</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£243.80</td>
+                    </tr>
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell nhsuk-table__cell">2025</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£15400.25</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£350.30</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£494.10</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">3.2%</td>
+                      <td class="nhsuk-table__cell nhsuk-table__cell">£514.10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                Continue
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

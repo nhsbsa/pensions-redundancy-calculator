@@ -142,9 +142,9 @@ router.post('/schemes', (req, res) => {
         }
         });
 
-      //Total pensionable earnings page
+      //Total pensionable earnings page (manual)
       router.post('/manual/pensionable-earnings', (req, res) => {
-        res.redirect('reckonable-service-current1')
+        res.redirect('annual-accrued-pension')
       });
 
       //Total pensionable earnings added page
@@ -309,17 +309,23 @@ router.post('/schemes', (req, res) => {
                 const pick = req.session.data['status']
                 if (pick == 'yes') {
                   //redirect to date of estimate spreadsheet1 page
-                  res.redirect('breaks-in-service');
+                  res.redirect('total-pensionable-earnings');
                 } else {
                   //redirect to date of estimate form1 page
                   res.redirect('pensionable-pay-figure');
                 }
               });
 
-              //what is the total pensionable pay figure page
+              //what are the pensionable earnings figure page (manual)
               router.post('/manual/pensionable-pay-figure', (req, res) => {
                 //direct to complete member details page 
-                res.redirect('breaks-in-service')
+                res.redirect('total-pensionable-earnings2')
+              });
+
+              //Enter the sum of employer pay figures for all years (-2025) (manual)
+              router.post('/manual/pensionable-earnings2', (req, res) => {
+                //direct to complete member details page 
+                res.redirect('annual-accrued-pension')
               });
 
               //Breaks in service page (manual data entry)
@@ -442,6 +448,11 @@ router.post('/schemes', (req, res) => {
             //direct back to the start page
             res.redirect('start')
           });
+
+          //Check the member's annual accrued pension page (manual)
+        router.post('/manual/annual-accrued-pension', (req, res) => {
+          res.redirect('redundancy-details1')
+        });
 
               
 
