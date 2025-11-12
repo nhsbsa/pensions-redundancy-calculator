@@ -29,6 +29,30 @@ router.post('/schemes', (req, res) => {
       res.redirect('start')
     });
 
+    //Start page
+    router.post('/start', (req, res) => {
+      const pick = req.session.data['consent']
+      if (pick == 'agree') {
+        //redirect to date of estimate spreadsheet1 page
+        res.redirect('schemes');
+      } else {
+        //redirect to date of estimate form1 page
+        res.redirect('start-error');
+      }
+    });
+
+    //Start page error
+    router.post('/start-error', (req, res) => {
+      const pick = req.session.data['consent']
+      if (pick == 'agree') {
+        //redirect to date of estimate spreadsheet1 page
+        res.redirect('schemes');
+      } else {
+        //redirect to date of estimate form1 page
+        res.redirect('start-error');
+      }
+    });
+
     //Membership number not found page
     router.post('/membership-error', (req, res) => {
       const select = req.session.data['check']
@@ -145,11 +169,6 @@ router.post('/schemes', (req, res) => {
       //Total pensionable earnings page (manual)
       router.post('/manual/pensionable-earnings', (req, res) => {
         res.redirect('annual-accrued-pension')
-      });
-
-      //Total pensionable earnings added page
-      router.post('/manual/pensionable-earnings-added', (req, res) => {
-        res.redirect('reckonable-service-current1')
       });
 
       //Redundancy details page
@@ -453,6 +472,30 @@ router.post('/schemes', (req, res) => {
         router.post('/manual/annual-accrued-pension', (req, res) => {
           res.redirect('redundancy-details1')
         });
+
+        //Interest in efficiency page (manual)
+        router.post('/manual/interest-in-efficiency', (req, res) => {
+          const pick = req.session.data['ioe']
+          if (pick == 'yes') {
+            //redirect to date of estimate spreadsheet1 page
+            res.redirect('check-final-details-ioe');
+          } else {
+            //redirect to date of estimate form1 page
+            res.redirect('redundancy-pay-spreadsheet1');
+          }
+        });
+
+        //Estimated pensionable earnings april to March page (manual journey)
+        router.post('/manual/pensionable-earnings-april-march', (req, res) => {
+          res.redirect('pensionable-earnings-april-dol')
+        });
+
+        //Estimated pensionable earnings april to DOL (manual journey)
+        router.post('/manual/pensionable-earnings-april-dol', (req, res) => {
+          res.redirect('interest-in-efficiency')
+        });
+
+
 
               
 

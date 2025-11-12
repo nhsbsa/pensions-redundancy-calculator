@@ -42,6 +42,23 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-error-summary" data-module="nhsuk-error-summary">
+                <div role="alert">
+                  <h2 class="nhsuk-error-summary__title">
+                    There is a problem
+                  </h2>
+                  <div class="nhsuk-error-summary__body">
+                    <p>
+                      You must confirm you have read the information and have opened the member's record in Compendia before starting.
+                    </p>
+                    <ul class="nhsuk-list nhsuk-error-summary__list">
+                      <li>
+                        <a href="#consentCheck">Checkbox has not been selected</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
       
               <h1>Get a redundancy estimate</h1>
               <p>Use this service to calculate redundancy estimates for NHS Pension Scheme members.</p>
@@ -70,18 +87,19 @@
               </ul>
               <p>You should open the member's Compendia record before starting.</p>
 
-              <div class="nhsuk-form-group">
-                <form action="start" method="post" class="form">
-                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+              <div class="nhsuk-form-group nhsuk-form-group--error">
+                <form action="start-error" method="post" class="form">
+                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint contact-error">
+                  <span id="contact-error" class="nhsuk-error-message">
+                    <span class="nhsuk-u-visually-hidden">Error:</span> Confirm that you have opened the member's record on Compendia
+                  </span>
                   <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
                     <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example" name="consent" type="checkbox" value="agree">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
-                        I confirm that I have the member's record open in Compendia at the start of using the redundancy calculator.
+                      <input class="nhsuk-checkboxes__input" id="consentCheck" name="consent" type="checkbox" value="agree">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="check">
+                        I agree that I have the member's record open in Compendia at the start of using this calculator tool.
                       </label>
                     </div>
-
-                  </div>
                 </fieldset>
               </div>
       

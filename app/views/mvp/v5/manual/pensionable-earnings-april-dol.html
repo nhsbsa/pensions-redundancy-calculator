@@ -41,31 +41,25 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-              <div class="nhsuk-panel">
-                <h1 class="nhsuk-panel__title">
-                  Upload successful
-                </h1>
-              </div>
+
+              <form action="pensionable-earnings-april-dol" method="post" class="form">
       
-              
-              
-              <p>You've uploaded 2 files:</p>
-              <ul>
-                <li>the calculation sheet</li>
-                <li>the redundancy estimate letter</li>
-              </ul>
+              <h1 class="nhsuk-heading-l">What is the estimated pensionable earnings from 1 April [2026] to the date of estimate?</h1>
+            
+              <p>This information can be found on the employing authorities bulk spreadsheet provided by the employer under the Actual 2015 Scheme - next tax year section.</p>
 
-              <p>You can find the documents on the member's record in EDM.</p>
-              <p>The estimate letter has also been downloaded to your device. It can be found in the Downloads folder.</p>
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="example">
+                  Estimated pensionable earnings from 1 April to date of estimate
+                </label>
+                <div class="nhsuk-input__wrapper">
+                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="nhsuk-input nhsuk-input--width-10" id="example" name="pensionablePay" type="text">
+                </div>
+              </div>
 
-              <h3>What happens next</h3>
-              <p>Before starting a new estimate, you will need to email the redundancy estimate letter to the employer.</p>
-
-              <p><a href="https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook?deeplink=%2fmail%2f0%2f%3fnlp%3d0&sdf=0" target="_blank">Email the employer the estimate (opens in a new tab)</a></p>
-
-              <form action="upload-files" method="post" class="form">
-              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start a new calculation</button>
-            </form>
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              </form>
       
             </div>
           </div>
