@@ -131,7 +131,7 @@ router.post('/schemes', (req, res) => {
     router.post('/membership', (req, res) => {
       let number = req.session.data['memberNumber']
 
-      if (number === '123456789' || number === '123456787' || number === '123456786') {
+      if (number === '11697385' || number === '123456787' || number === '123456786') {
       res.redirect('full-member-details-found')
       } else if (number === '123456779') {
         res.redirect('complexity-found')
@@ -146,7 +146,7 @@ router.post('/schemes', (req, res) => {
   
       if (pick == 'yes') {
         // Redirect to Check member details page
-        res.redirect('check-member-details');
+        res.redirect('multi-employments');
       } else {
         // Redirect to EA number page (manual data entry)
         res.redirect('manual/ea-number');
@@ -159,7 +159,7 @@ router.post('/schemes', (req, res) => {
 
         if (pick == 'yes') {
           //redirect to date of estimate spreadsheet page
-          res.redirect('reckonable-service-current');
+          res.redirect('annual-accrued-pension');
         } else {
           //redirect to date of estimate form page
           res.redirect('estimate-cannot-be-calculated');
@@ -493,6 +493,28 @@ router.post('/schemes', (req, res) => {
         //Estimated pensionable earnings april to DOL (manual journey)
         router.post('/manual/pensionable-earnings-april-dol', (req, res) => {
           res.redirect('interest-in-efficiency')
+        });
+
+        //Multi employments page
+        router.post('/multi-employments', (req, res) => {
+          res.redirect('check-member-details')
+        });
+
+        //Is case updated to recent financial year?
+        router.post('/case-updated-to-recent-year', (req, res) => {
+          const pick = req.session.data['status']
+          if (pick == 'yes') {
+            //redirect to date of estimate spreadsheet1 page
+            res.redirect('redundancy-details');
+          } else {
+            //redirect to date of estimate form1 page
+            res.redirect('redundancy-pay-spreadsheet1');
+          }
+        });
+
+        //Check final details IOE page
+        router.post('/manual/check-final-details-ioe', (req, res) => {
+          res.redirect('calculation-result-ioe')
         });
 
 
