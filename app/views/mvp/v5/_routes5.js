@@ -522,6 +522,23 @@ router.post('/schemes', (req, res) => {
           res.redirect('case-updated-to-recent-year')
         });
 
+        //Pensionable earningsa April spreadsheet page
+        router.post('/pensionable-earnings-april-spreadsheet', (req, res) => {
+          res.redirect('interest-in-efficiency')
+        });
+
+        //Is case Interest in efficiency page
+        router.post('/interest-in-efficiency', (req, res) => {
+          const pick = req.session.data['ioe']
+          if (pick == 'yes') {
+            //redirect to date of estimate spreadsheet1 page
+            res.redirect('check-final-details-ioe');
+          } else {
+            //redirect to date of estimate form1 page
+            res.redirect('redundancy-pay-spreadsheet');
+          }
+        });
+
 
 
               
