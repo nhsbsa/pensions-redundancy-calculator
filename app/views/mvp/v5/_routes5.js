@@ -146,7 +146,7 @@ router.post('/schemes', (req, res) => {
   
       if (pick == 'yes') {
         // Redirect to Check member details page
-        res.redirect('multi-employments');
+        res.redirect('check-member-details');
       } else {
         // Redirect to EA number page (manual data entry)
         res.redirect('manual/ea-number');
@@ -508,13 +508,18 @@ router.post('/schemes', (req, res) => {
             res.redirect('redundancy-details');
           } else {
             //redirect to date of estimate form1 page
-            res.redirect('redundancy-pay-spreadsheet1');
+            res.redirect('redundancy-details');
           }
         });
 
         //Check final details IOE page
         router.post('/manual/check-final-details-ioe', (req, res) => {
           res.redirect('calculation-result-ioe')
+        });
+
+        //Annual accrued pension page
+        router.post('/annual-accrued-pension', (req, res) => {
+          res.redirect('case-updated-to-recent-year')
         });
 
 
