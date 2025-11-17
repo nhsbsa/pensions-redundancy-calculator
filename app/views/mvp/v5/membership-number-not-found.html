@@ -35,12 +35,9 @@
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-full">
             <form action="membership-error" method="post" class="form">
-              <h1 class="nhsuk-heading-l">No details found</h1>
+              <h1 class="nhsuk-heading-l">Member details not found</h1>
 
-              <p>
-                A member has not been found in Compendia for the
-                membership number that was entered.
-              </p>
+              <p>We could not find details for a member in Compendia using the membership number you entered.</p>
               <div class="nhsuk-inset-text">
                 <span class="nhsuk-u-visually-hidden">Information: </span>
                 <p>Membership number<br />{{ data['memberNumber']}}</p>
@@ -51,8 +48,7 @@
                   <legend
                     class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
                     <h1 class="nhsuk-fieldset__heading">
-                      Would you like to continue the calculation for this
-                      member?
+                      Do you want to continue using this membership number?
                     </h1>
                   </legend>
                   <div class="nhsuk-radios" data-module="nhsuk-radios">
@@ -68,7 +64,7 @@
                         class="nhsuk-label nhsuk-radios__label"
                         for="example"
                       >
-                        Yes, I will enter the member's details manually
+                        Yes, I'll enter the member's details manually
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
@@ -83,7 +79,7 @@
                         class="nhsuk-label nhsuk-radios__label"
                         for="example-2"
                       >
-                        No
+                        No, I need to change the membership number
                       </label>
                     </div>
                   </div>
