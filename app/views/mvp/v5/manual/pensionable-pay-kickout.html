@@ -37,38 +37,30 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
       <div class="nhsuk-width-container">
-      
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
-              <form action="pensionable-earnings-april-spreadsheet" method="post" class="form">
-                <span class="nhsuk-caption-l nhsuk-caption--bottom">11636365 - John Smith</span>
       
-              <h1 class="nhsuk-heading-l">What is the estimated pensionable earnings from 1 April to the date of estimate?</h1>
-            
-              <p> You can find this information on the 'Bulk redundancy spreadsheet' provided by the employer, in the 'Actual 2015 Scheme - current tax year' section.</p>
+              <form action="pensionable-pay-kickout" method="post" class="form">
+      
+                <h1 class="nhsuk-heading-l">
+                  Cannot complete calculation for this member
+                </h1>
+      
+                <p>As the employer has not provided the pensionable figure for the current financial year, you cannot complete a redundancy calculation for this member. The employer needs to provide this figure and ensure that the member's record is up to date.
+                </p>
 
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="example">
-                  Estimated pensionable earnings
-                </label>
-                <div class="nhsuk-input__wrapper">
-                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-10" id="example" name="pensionablePay" type="text">
-                </div>
-              </div>
-
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+                <h2>What to do next</h2>
+                <p>The case needs to be set to 'Pend' status in Compendia and you will need to request that the employer updates the member's record to the most recent financial year. </p>
+      
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                  Start a new calculation
+                </button>
+      
               </form>
       
             </div>
           </div>
         </main>
       </div>
-
-      <!-- End of content -->
-
-    </div>
-  </div>
 {% endblock %}

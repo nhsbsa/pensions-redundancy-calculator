@@ -539,6 +539,18 @@ router.post('/schemes', (req, res) => {
           }
         });
 
+        //Has the employer provided the pensionable earnings for current scheme year?
+        router.post('/manual/pensionable-pay-figure', (req, res) => {
+          const pick = req.session.data['employerProvided']
+          if (pick == 'yes') {
+            //redirect to enter sum of employer pay figures
+            res.redirect('total-pensionable-earnings2');
+          } else {
+            //redirect to kickout page
+            res.redirect('pensionable-pay-kickout');
+          }
+        });
+
 
 
               

@@ -37,40 +37,84 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
       <div class="nhsuk-width-container">
-      
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-
+      
               <form action="pensionable-pay-figure" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What are the pensionable earnings for scheme year [2025]?</h1>
-            
-              <p>As the record has not been updated to the current financial year, the total pensionable pay figure should be provided by the employer. This figure can be found on either the Bulk estimate spreadsheet or the AW295 form sent by the employer.</p>
-
-
+                <h1 class="nhsuk-heading-l">
+                  Has the employer provided the pensionable earnings for Scheme year [2025]?
+                </h1>
+      
+                <p>
+                  As the member's record does not show this financial year, you need to use pensionable earnings the Employing Authority gave you. 
+                  You can find this information on the 'Bulk redundancy spreadsheet' or the 
+                  'Request for an estimate of benefits form (AW295)' the employer provided.
+                </p>
+      
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="example">
-                    Total pensionable pay figure 
-                  </label>
-                  <div class="nhsuk-input__wrapper">
-                    <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                    <input class="nhsuk-input nhsuk-input--width-5" id="example" name="value2025" type="text">
-                  </div>
+                  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+      
+                    <div class="nhsuk-radios" data-module="nhsuk-radios">
+      
+                      <!-- YES OPTION -->
+                      <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" 
+                               id="employerProvidedYes" 
+                               name="employerProvided" 
+                               type="radio" 
+                               value="yes"
+                               aria-controls="conditional-earnings"
+                               aria-expanded="false">
+      
+                        <label class="nhsuk-label nhsuk-radios__label" for="employerProvidedYes">
+                          Yes
+                        </label>
+                      </div>
+      
+                      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" 
+                           id="conditional-earnings">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label" for="earnings2025">
+                            Scheme year 2025 pensionable earnings
+                          </label>
+      
+                          <div class="nhsuk-input__wrapper">
+                            <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="nhsuk-input nhsuk-input--width-10" 
+                                   id="earnings2025" 
+                                   name="earnings2025" 
+                                   type="text">
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- NO OPTION -->
+                      <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" 
+                               id="employerProvidedNo" 
+                               name="employerProvided" 
+                               type="radio" 
+                               value="no">
+      
+                        <label class="nhsuk-label nhsuk-radios__label" for="employerProvidedNo">
+                          No
+                        </label>
+                      </div>
+      
+                    </div>
+                  </fieldset>
                 </div>
-
-             
-
-                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+      
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+                  Continue
+                </button>
+      
               </form>
       
             </div>
           </div>
         </main>
       </div>
-
-      <!-- End of content -->
-
-    </div>
-  </div>
 {% endblock %}

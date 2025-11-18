@@ -36,27 +36,19 @@
               <fieldset class="nhsuk-fieldset" aria-describedby="earnings-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    Enter the sum of employer pay figures for all years
+                    Enter the sum of employer pay figures
                   </h1>
                 </legend>
 
-                <p>
-                  The pensionable earnings figures for each Scheme year are in the Annual accrued pension set in Compendia.
-                  The value for each Scheme year is shown in the Sum of employer pay column.
-                </p>
-
-                {% from 'inset-text/macro.njk' import insetText %}
-                {{ insetText({
-                  html: '<p>You should enter the Sum of employer pay figure for the oldest Scheme year first.</p>'
-                }) }}
+                <p>You can find these on the 'Annual Accrued Pension' set in Compendia, under the 'Sum of Employer Pay' column.</p>
 
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="value2024">
-                    Scheme year 2023
+                  <label class="nhsuk-label" for="value2025">
+                    Scheme year 2025
                   </label>
                   <div class="nhsuk-input__wrapper">
                     <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                    <input class="nhsuk-input nhsuk-input--width-5" id="value2024" name="value2024" type="text">
+                    <input class="nhsuk-input nhsuk-input--width-5" id="value2025" name="value2025" type="text">
                   </div>
                 </div>
 
@@ -69,14 +61,14 @@
                     <input class="nhsuk-input nhsuk-input--width-5" id="value2024" name="value2024" type="text">
                   </div>
                 </div>
-                
+
                 <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="value2024">
-                    Scheme year 2025
+                  <label class="nhsuk-label" for="value2023">
+                    Scheme year 2023
                   </label>
                   <div class="nhsuk-input__wrapper">
                     <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                    <input class="nhsuk-input nhsuk-input--width-5" id="value2024" name="value2024" type="text">
+                    <input class="nhsuk-input nhsuk-input--width-5" id="value2023" name="value2023" type="text">
                   </div>
                 </div>
               </fieldset>

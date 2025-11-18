@@ -36,7 +36,7 @@
               <fieldset class="nhsuk-fieldset" aria-describedby="earnings-hint">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    Enter the sum of employer pay figures for all years
+                    Enter the sum of employer pay figures
                   </h1>
                 </legend>
 
@@ -45,10 +45,6 @@
                   The value for each Scheme year is shown in the Sum of employer pay column.
                 </p>
 
-                {% from 'inset-text/macro.njk' import insetText %}
-                {{ insetText({
-                  html: '<p>You should enter the Sum of employer pay figure for the oldest Scheme year first.</p>'
-                }) }}
 
                 <div class="nhsuk-form-group">
                   <label class="nhsuk-label" for="value2023">
