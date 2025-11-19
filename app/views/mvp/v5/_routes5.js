@@ -166,11 +166,6 @@ router.post('/schemes', (req, res) => {
         }
         });
 
-      //Total pensionable earnings page (manual)
-      router.post('/manual/pensionable-earnings', (req, res) => {
-        res.redirect('annual-accrued-pension')
-      });
-
       //Redundancy details page
       router.post('/redundancy-details', (req, res) => {
         const pick = req.session.data['receivedBy']
@@ -333,12 +328,6 @@ router.post('/schemes', (req, res) => {
                   //redirect to date of estimate form1 page
                   res.redirect('pensionable-pay-figure');
                 }
-              });
-
-              //what are the pensionable earnings figure page (manual)
-              router.post('/manual/pensionable-pay-figure', (req, res) => {
-                //direct to complete member details page 
-                res.redirect('total-pensionable-earnings2')
               });
 
               //Enter the sum of employer pay figures for all years (-2025) (manual)
