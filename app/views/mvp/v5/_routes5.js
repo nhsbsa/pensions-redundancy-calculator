@@ -545,10 +545,13 @@ router.post('/schemes', (req, res) => {
           if (pick == 'yes') {
             //redirect to enter sum of employer pay figures
             res.redirect('total-pensionable-earnings2');
-          } else {
+          } else if (pick == 'no') {
             //redirect to kickout page
-            res.redirect('pensionable-pay-kickout');
-          }
+            res.redirect('pensionable-pay-kickout');}
+            else {
+              res.redirect('pensionable-pay-figure');
+            }
+          
         });
 
 

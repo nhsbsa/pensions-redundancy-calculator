@@ -48,15 +48,54 @@
               <p>You can find this in the 'Members Basic Details' set in Compendia.</p>
 
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="select-1">
-                  Title
-                </label> <select class="nhsuk-select nhsuk-select--one-quarter" id="select-title" name="select-1">
-                  <option value="1">Mr</option>
-                  <option value="2" selected>Ms</option>
-                  <option value="3">Mrs</option>
-                  <option value="4">Miss</option>
-                  <option value="5">Dr</option>
-                </select>
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__label--s">
+                    <label>Title</label>
+                  </legend>
+                  <div class="nhsuk-radios nhsuk-radios--small" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="filter" name="title" type="radio" value="mr">
+                      <label class="nhsuk-label nhsuk-radios__label" for="filter">
+                        Mr
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="filter-2" name="title" type="radio" value="miss">
+                      <label class="nhsuk-label nhsuk-radios__label" for="filter-2">
+                        Miss
+                      </label>
+                    </div>
+                 
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="filter-2" name="title" type="radio" value="mrs">
+                    <label class="nhsuk-label nhsuk-radios__label" for="filter-2">
+                      Mrs
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="filter-3" name="title" type="radio" value="ms">
+                    <label class="nhsuk-label nhsuk-radios__label" for="filter-2">
+                      Ms
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="filter-4" name="title" type="radio" value="other" aria-controls="conditional-contact-2">
+                    <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                      Other
+                    </label>
+                  </div>
+                  <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="phone">
+                        Title 
+                      </label>
+                      <input class="nhsuk-input nhsuk-u-width-one-third" id="phone" name="title" type="text">
+                    </div>
+                  </div>
+                </div>
+                </fieldset>
               </div>
 
               <div class="nhsuk-form-group">
