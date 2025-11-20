@@ -543,6 +543,11 @@ router.post('/schemes', (req, res) => {
           
         });
 
+        //Enter the sum of employer pay figures page (manual)
+        router.post('/manual/total-pensionable-earnings', (req, res) => {
+          res.redirect('annual-accrued-pension')
+        });
+
 
 
               
