@@ -56,17 +56,18 @@
 
               <form action="date-of-estimate-spreadsheet" method="post" class="form">
 
-              <div class="nhsuk-form-group nhsuk-form-group--error">
+              <div class="nhsuk-form-group nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset" role="group" aria-describedby="dob-errors-hint dob-errors-error">
                   <legend class="nhsuk-fieldset__legend nhsuk-label--l">
                     <h1 class="nhsuk-fieldset__heading">
                       What is the date of estimate?
                     </h1>
                   </legend>
-                  <p>This information can be found on the employing bulk spreadsheet under the Date of estimate column.</p>
+                  <p>You can find this information on the 'Request for an estimate of benefits form (AW295)' provided by the employer.</p>
                   <div id="dob-errors-hint" class="nhsuk-hint">
                     For example, 20 12 2025
                   </div>
+                  <div class="nhsuk-form-group nhsuk-form-group--error">
                   <span id="dob-errors-error" class="nhsuk-error-message">
                     <span class="nhsuk-u-visually-hidden">Error:</span> Enter the date of estimate
                   </span>
@@ -95,6 +96,7 @@
                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="dob-errors-year" name="year" type="text" inputmode="numeric">
                       </div>
                     </div>
+                  </div>
                   </div>
                 </fieldset>
               </div>
