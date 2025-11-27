@@ -42,20 +42,29 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
 
-              <form action="pensionable-earning-form" method="post" class="form">
+              <form action="interest-in-efficiency-form" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">What are the estimated pensionable earnings from 1 April [2025] to 31 March [2026]?</h1>
+              <h1 class="nhsuk-heading-l">Is this an interest of efficiency request?</h1>
             
               <p>You can find this information on the 'Request for an estimate of benefits form (AW295)' the employer provided.</p>
 
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="example">
-                  Estimated pensionable earnings
-                </label>
-                <div class="nhsuk-input__wrapper">
-                  <div class="nhsuk-input__prefix" aria-hidden="true">£</div>
-                  <input class="nhsuk-input nhsuk-input--width-10" id="example" name="pensionablePay" type="text">
-                </div>
+                <fieldset class="nhsuk-fieldset">
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example" name="ioe" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="ioe" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
 
                 <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>

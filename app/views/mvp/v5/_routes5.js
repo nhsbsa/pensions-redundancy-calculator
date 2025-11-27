@@ -19,7 +19,7 @@ router.post('/schemes', (req, res) => {
         // Redirect to your special 2015-only page
         res.redirect('complexities-list');
       } else {
-        // Default page for all other selections
+        // Kickout page for all other selections
         res.redirect('scheme-selection-kickout');
       }
     });
@@ -33,10 +33,10 @@ router.post('/schemes', (req, res) => {
     router.post('/start', (req, res) => {
       const pick = req.session.data['consent']
       if (pick == 'agree') {
-        //redirect to date of estimate spreadsheet1 page
+        //redirect to scheme selections
         res.redirect('schemes');
       } else {
-        //redirect to date of estimate form1 page
+        //redirect to start error state
         res.redirect('start-error');
       }
     });
@@ -45,10 +45,10 @@ router.post('/schemes', (req, res) => {
     router.post('/start-error', (req, res) => {
       const pick = req.session.data['consent']
       if (pick == 'agree') {
-        //redirect to date of estimate spreadsheet1 page
+        //redirect to scheme selection page
         res.redirect('schemes');
       } else {
-        //redirect to date of estimate form1 page
+        //redirect to same error state page
         res.redirect('start-error');
       }
     });
@@ -58,7 +58,7 @@ router.post('/schemes', (req, res) => {
       const select = req.session.data['check']
   
       if (select == 'yes') {
-        // Redirect to EA number page
+        // Redirect to EA code page
         res.redirect('manual/ea-number');
       } else {
         // If no back to the membership number page
@@ -66,7 +66,7 @@ router.post('/schemes', (req, res) => {
       }
     });
 
-    //EA number page
+    //EA code page
     router.post('/manual/ea-number', (req, res) => {
       res.redirect('member-name')
     });
@@ -93,7 +93,7 @@ router.post('/schemes', (req, res) => {
         // send to under 55 at redundancy page
         res.redirect('under-55');
       } else {
-        // Otherwise send them to
+        // Otherwise send them to state pension page
         res.redirect('state-pension-age');
       }
     });
@@ -109,10 +109,10 @@ router.post('/schemes', (req, res) => {
       const select = req.session.data['complexities']
   
       if (select == 'yes') {
-        // Redirect to your special 2015-only page
+        // kickout page as complexity detected
         res.redirect('cannot-be-calculated');
       } else {
-        // Default page for all other selections
+        // sent to membership number page
         res.redirect('membership-number');
       }
     });
@@ -148,7 +148,7 @@ router.post('/schemes', (req, res) => {
         // Redirect to Check member details page
         res.redirect('check-member-details');
       } else {
-        // Redirect to EA number page (manual data entry)
+        // Redirect to enter details manually route - EA number page 
         res.redirect('manual/ea-number');
       }
     });
@@ -158,10 +158,10 @@ router.post('/schemes', (req, res) => {
         const pick = req.session.data['allDetails']
 
         if (pick == 'yes') {
-          //redirect to date of estimate spreadsheet page
+          //redirect to annual accrued pension page
           res.redirect('annual-accrued-pension');
         } else {
-          //redirect to date of estimate form page
+          //kickout as details provided do not match
           res.redirect('estimate-cannot-be-calculated');
         }
         });
@@ -191,7 +191,7 @@ router.post('/schemes', (req, res) => {
             // send to under 55 at redundancy page
             res.redirect('under-55-at-redundancy');
           } else {
-            // Otherwise send them to
+            // Otherwise send them to pensionable earnings
             res.redirect('pensionable-earnings-april-form');
           }
         });
@@ -208,7 +208,7 @@ router.post('/schemes', (req, res) => {
             // send to under 55 at redundancy page
             res.redirect('under-55-at-redundancy');
           } else {
-            // Otherwise send them to
+            // Otherwise send them to pensionable earnings
             res.redirect('pensionable-earnings-april-spreadsheet');
           }
         });
@@ -274,19 +274,6 @@ router.post('/schemes', (req, res) => {
             }
             });
 
-            // Partial member details found page
-            router.post('/partial-member-details-found', (req, res) => {
-              const selection = req.session.data['partialDetails']
-      
-              if (selection == 'yes') {
-                //redirect to download successful page
-                res.redirect('complete-member-details');
-              } else {
-                //redirect to EA email address page
-                res.redirect('ea-number');
-              }
-              });
-
               //Download files page
               router.post('/download-files', (req, res) => {
                 //direct back to the start page
@@ -298,13 +285,6 @@ router.post('/schemes', (req, res) => {
                 //direct back to the start page
                 res.redirect('start')
               });
-
-              //Scheme start date add page
-              router.post('/scheme-start-date-add', (req, res) => {
-                //direct to complete member details page 
-                res.redirect('complete-member-details')
-              });
-             
 
               //Check member details amendments page
               router.post('/check-member-details-amendments', (req, res) => {
@@ -397,9 +377,26 @@ router.post('/schemes', (req, res) => {
           }
         });
 
-        //Estimated pensionable earnings form page
+        //What are the estimated pensionable earnings from 1 April 2025 to 31 March 2026 page (form)
         router.post('/manual/pensionable-earning-form', (req, res) => {
-          res.redirect('redundancy-pay-form1')
+          res.redirect('pensionable-earnings-april-dol-form')
+        });
+
+        //What are the estimated pensionable earnings from 1 April 2026 to DOL page (form)
+        router.post('/manual/pensionable-earning-april-dol-form', (req, res) => {
+          res.redirect('interest-in-efficiency-form')
+        });
+
+        //Is this an interest of efficiency request (form)
+        router.post('/manual/interest-in-efficiency-form', (req, res) => {
+          const pick = req.session.data['ioe']
+          if (pick == 'yes') {
+            //redirect to date of estimate spreadsheet1 page
+            res.redirect('check-final-details-ioe');
+          } else {
+            //redirect to date of estimate form1 page
+            res.redirect('redundancy-pay-form1');
+          }
         });
 
         //Estimated pensionable earnings spreadsheet page
@@ -493,12 +490,27 @@ router.post('/schemes', (req, res) => {
         router.post('/case-updated-to-recent-year', (req, res) => {
           const pick = req.session.data['status']
           if (pick == 'yes') {
-            //redirect to date of estimate spreadsheet1 page
+            //redirect to redundancy details page
             res.redirect('redundancy-details');
           } else {
-            //redirect to date of estimate form1 page
-            res.redirect('redundancy-details');
+            //Has the employer provided the pensionable earnings for scheme year 2025?
+            res.redirect('pensionable-pay-figure-2025');
           }
+        });
+
+        //Has the employer provided the pensionable earnings for Scheme year 2025?
+        router.post('/pensionable-pay-figure-2025', (req, res) => {
+          const pick = req.session.data['employerProvided1']
+          if (pick == 'yes') {
+            //take to redundancy details page
+            res.redirect('redundancy-details');
+          } else if (pick == 'no') {
+            //redirect to kickout page
+            res.redirect('pensionable-pay-2025-kickout');}
+            else {
+              res.redirect('pensionable-pay-figure-2025');
+            }
+          
         });
 
         //Check final details IOE page
@@ -511,7 +523,7 @@ router.post('/schemes', (req, res) => {
           res.redirect('case-updated-to-recent-year')
         });
 
-        //Pensionable earningsa April spreadsheet page
+        //Pensionable earnings April spreadsheet page
         router.post('/pensionable-earnings-april-spreadsheet', (req, res) => {
           res.redirect('interest-in-efficiency')
         });
@@ -528,7 +540,7 @@ router.post('/schemes', (req, res) => {
           }
         });
 
-        //Has the employer provided the pensionable earnings for current scheme year?
+        //Has the employer provided the pensionable earnings for current scheme year? (manual route)
         router.post('/manual/pensionable-pay-figure', (req, res) => {
           const pick = req.session.data['employerProvided']
           if (pick == 'yes') {
