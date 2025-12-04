@@ -216,13 +216,23 @@
       </h2>
       <p>Refer to the supporting documents below for more information.</p>
 
+      {% from "details/macro.njk" import details %}
+
+{% set dummyNhsNumber = "999 123 4567" %}
+
+{% call details({
+  summaryText: "Usability testing supporting documentation"
+}) %}
+  
+  <ul>
+    <li><a href="https://nhsbsauk.sharepoint.com/:x:/r/teams/DDaTPension/_layouts/15/Doc.aspx?sourcedoc=%7BADB98ABD-0835-40DE-A4C3-836EA7328148%7D&file=Compendia%20sets%20-%20Example%20template.xlsx&action=default&mobileredirect=true" target="_blank">Compendia sets - Example template</a> – Document for users to refer to when usability testing the calculator. (Used in UR rounds 11&12)</li>
+    <li><a href="https://nhsbsauk.sharepoint.com/:x:/r/teams/DDaTPension/_layouts/15/Doc.aspx?sourcedoc=%7B92E11E99-416A-4D28-8689-3F942BAD7484%7D&file=Touch%20Admin%20record%20-%2011697385%20J%20SMITH.xlsx&action=default&mobileredirect=true" target="_blank">Compendia Touch sets - Scenario 1</a> – Document for users to refer to when usability testing the calculator. (Used in UR round 13)</li>
+    <li><a href="https://nhsbsauk.sharepoint.com/:x:/r/teams/DDaTPension/_layouts/15/Doc.aspx?sourcedoc=%7B03E0E673-38F6-4A09-99C7-9349DC19CC75%7D&file=Touch%20Admin%20record%20-%2067092299%20J%20DOE.xlsx&action=default&mobileredirect=true" target="_blank">Compendia Touch sets - Scenario 2</a> – Document for users to refer to when usability testing the calculator. (Used in UR round 13)</li>
+    <li><a href="https://nhsbsauk.sharepoint.com/:x:/r/teams/DDaTPension/_layouts/15/Doc.aspx?sourcedoc=%7B718A961B-6176-4B9D-92EB-D7A39D71324A%7D&file=EA%20Bulk%20Spreadsheet%20-%20testing%20data.xlsx&action=default&mobileredirect=true" target="_blank">EA Bulk spreadsheet (Dummy data used)</a> – Mock up of the EA bulk spreadsheet to use in testing sessions.</li>
+  </ul>
+{% endcall %}
+
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>
-          <a href="https://nhsbsauk.sharepoint.com/:x:/r/teams/DDaTPension/_layouts/15/Doc.aspx?sourcedoc=%7BADB98ABD-0835-40DE-A4C3-836EA7328148%7D&file=Compendia%20sets%20-%20Example%20template.xlsx&action=default&mobileredirect=true" target="_blank">Compendia sets - Example template</a> – Document for users to refer to when usability testing the calculator.
-        </li>
-        <li>
-          <a href="https://nhsbsauk.sharepoint.com/:x:/r/teams/DDaTPension/_layouts/15/Doc.aspx?sourcedoc=%7B718A961B-6176-4B9D-92EB-D7A39D71324A%7D&file=EA%20Bulk%20Spreadsheet%20-%20testing%20data.xlsx&action=default&mobileredirect=true" target="_blank">EA Bulk spreadsheet (Dummy data used)</a> – Mock up of the EA bulk spreadsheet to use in testing sessions.
-        </li>
         <li>
           <a href="https://miro.com/app/board/uXjVIz2FM5M=/?share_link_id=135441646665" target="_blank">User flow</a> – Miro board for the user flows. <strong>(Password - pensions)</strong>
         </li>
