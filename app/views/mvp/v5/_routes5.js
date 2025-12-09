@@ -133,8 +133,8 @@ router.post('/schemes', (req, res) => {
 
       if (number === '11697385' || number === '123456787' || number === '123456786') {
       res.redirect('full-member-details-found')
-      } else if (number === '123456779') {
-        res.redirect('complexity-found')
+      } else if (number === '11697384') {
+        res.redirect('full-member-details3')
     } else {
       res.redirect('membership-number-not-found')
     }
@@ -153,6 +153,19 @@ router.post('/schemes', (req, res) => {
       }
     });
 
+    //full member details3 page (Scenario3)
+    router.post('/full-member-details3', (req, res) => {
+      const pick = req.session.data['Details']
+  
+      if (pick == 'yes') {
+        // Redirect to multi employments page
+        res.redirect('multi-employments');
+      } else {
+        // Redirect to enter details manually route - EA number page 
+        res.redirect('manual/ea-number');
+      }
+    });
+
       //Check member details page
       router.post('/check-member-details', (req, res) => {
         const pick = req.session.data['allDetails']
@@ -160,6 +173,19 @@ router.post('/schemes', (req, res) => {
         if (pick == 'yes') {
           //redirect to annual accrued pension page
           res.redirect('annual-accrued-pension');
+        } else {
+          //kickout as details provided do not match
+          res.redirect('estimate-cannot-be-calculated');
+        }
+        });
+
+        //Check member details3 page (scenario 3)
+      router.post('/check-member-details3', (req, res) => {
+        const pick = req.session.data['Details3']
+
+        if (pick == 'yes') {
+          //redirect to annual accrued pension page
+          res.redirect('annual-accrued-pension3');
         } else {
           //kickout as details provided do not match
           res.redirect('estimate-cannot-be-calculated');
@@ -483,7 +509,7 @@ router.post('/schemes', (req, res) => {
 
         //Multi employments page
         router.post('/multi-employments', (req, res) => {
-          res.redirect('check-member-details')
+          res.redirect('check-member-details3')
         });
 
         //Is case updated to recent financial year?

@@ -1,0 +1,148 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+      
+              <h1 class="nhsuk-heading-l">Check the member's details</h1>
+              
+              
+              <p>These details are from the member's Compendia Touch record.</p>
+
+              <h3>Member details</h3>
+
+              <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Membership number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ data['memberNumber']}}
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Employing Authority code
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    5279
+                  </dd>                 
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Mr David Scott
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    National Insurance number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p>AB 12 34 56 J</p>
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    10 October 1960
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    State pension age
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    67 years
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    First date of scheme membership
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    10 June 2000
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="nhsuk-form-group">
+                <form action="check-member-details3" method="post" class="form">
+              
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    <h2 class="nhsuk-fieldset__heading">
+                      Do the member's Compendia Touch details match with those from the employer?
+                    </h2>
+                  </legend>
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example" name="Details3" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="Details3" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+            </form>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}
