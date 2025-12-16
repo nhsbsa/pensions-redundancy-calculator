@@ -205,7 +205,7 @@ router.post('/schemes', (req, res) => {
         }
         });
 
-        //Date of estimate form page
+        //Date of estimate form page (Scenario 3)
         router.post('/date-of-estimate-form', (req, res) => {
           // Get the values entered
           const day = req.session.data['estimateDay'];
@@ -218,9 +218,10 @@ router.post('/schemes', (req, res) => {
             res.redirect('under-55-at-redundancy');
           } else {
             // Otherwise send them to pensionable earnings
-            res.redirect('pensionable-earnings-april-form');
+            res.redirect('pensionable-earnings-april-mar-form');
           }
         });
+        
 
         //Date of estimate spreadsheet page
         router.post('/date-of-estimate-spreadsheet', (req, res) => {
@@ -239,6 +240,29 @@ router.post('/schemes', (req, res) => {
           }
         });
 
+        //Estimated pensionable earnings Apr - Mar form (Scenario 3)
+        router.post('/pensionable-earnings-april-mar-form', (req, res) => {
+          res.redirect('pensionable-earnings-apr-dol-form')
+        });
+
+        //Estimated pensionable earnings Apr - DOL form (Scenario 3)
+        router.post('/pensionable-earnings-apr-dol-form', (req, res) => {
+          res.redirect('interest-in-efficiency-form')
+        });
+
+        //Interest of efficiency form page (Scenario 3)
+        router.post('/interest-in-efficiency-form', (req, res) => {
+          const selection = req.session.data['efficiency']
+  
+          if (selection == 'yes') {
+            //redirect to Check member details page (IOE)
+            res.redirect('partial-member-details-found');
+          } else {
+            //redirect to redundancy figure form page
+            res.redirect('redundancy-pay-form');
+          }
+          });
+
         //Estimated pensionable earnings form page
         router.post('/pensionable-earning-form', (req, res) => {
           res.redirect('redundancy-pay-form')
@@ -251,7 +275,7 @@ router.post('/schemes', (req, res) => {
 
         //Redundancy payment form page
         router.post('/redundancy-pay-form', (req, res) => {
-          res.redirect('check-final-details')
+          res.redirect('check-final-details-form')
         });
 
          //Redundancy payment spreadsheet page
