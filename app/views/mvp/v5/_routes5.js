@@ -133,7 +133,7 @@ router.post('/schemes', (req, res) => {
 
       if (number === '11697385' || number === '123456787' || number === '123456786') {
       res.redirect('full-member-details-found')
-      } else if (number === '11697384') {
+      } else if (number === '78843423') {
         res.redirect('full-member-details3')
     } else {
       res.redirect('membership-number-not-found')
