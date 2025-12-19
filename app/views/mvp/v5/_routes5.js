@@ -568,6 +568,11 @@ router.post('/schemes', (req, res) => {
           res.redirect('calculation-result-ioe')
         });
 
+        //Check final details form page (Scenario 3)
+        router.post('/check-final-details-form', (req, res) => {
+          res.redirect('calculation-result-form')
+        });
+
         //Annual accrued pension page
         router.post('/annual-accrued-pension', (req, res) => {
           res.redirect('case-updated-to-recent-year')

@@ -25,7 +25,6 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
@@ -41,11 +40,10 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
+              
       
-              <h1 class="nhsuk-heading-l">Check the member's details</h1>
-              
-              
-              <p>These details are from the member's Compendia Touch record.</p>
+              <h1 class="nhsuk-heading-l">We cannot calculate a redundancy estimate for this member</h1>
+              <p>As the date of estimate is in the past, the tool cannot be used to calculate this estimate.</p>
 
               <h3>Member details</h3>
 
@@ -106,36 +104,26 @@
                     19 June 2023
                   </dd>
                 </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Service end date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    20 December 2025
+                  </dd>
+                </div>
               </dl>
 
-              <div class="nhsuk-form-group">
-                <form action="check-member-details" method="post" class="form">
+              <h2>What happens next</h2>
+              <p>The case needs to be allocated to another pension admin who can process the case using another tool.</p>
               
-                <fieldset class="nhsuk-fieldset">
-                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-                    <h2 class="nhsuk-fieldset__heading">
-                      Do the member's Compendia Touch details match with those from the employer?
-                    </h2>
-                  </legend>
-                  <div class="nhsuk-radios" data-module="nhsuk-radios">
-                    <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example" name="allDetails" type="radio" value="yes">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="allDetails" type="radio" value="no">
-                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                        No
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-            
-              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
-            </form>
+
+              <a class="nhsuk-button" role="button" href="start">
+                Start a new calculation
+              </a>
+           
+
+      
             </div>
           </div>
         </main>
