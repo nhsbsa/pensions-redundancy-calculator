@@ -1,0 +1,86 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+
+              <form action="case-updated-to-recent-year5" method="post" class="form">
+      
+              <h1 class="nhsuk-heading-l">Has the member's Compendia record updated for the current financial year?</h1>
+            
+              <p>You can check this in the 'Service History' set in Compendia. The 'Last Updated' column shows when the record was last updated.</p>
+
+              <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <form action="compendia-updated" method="post" class="form">
+                  <div class="nhsuk-radios" data-module="nhsuk-radios">
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example" name="status" type="radio" value="yes">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="example-2" name="status" type="radio" value="no">
+                      <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+             
+
+                <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+              </form>
+      
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

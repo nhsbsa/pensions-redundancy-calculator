@@ -137,6 +137,8 @@ router.post('/schemes', (req, res) => {
         res.redirect('full-member-details3')
       } else if (number === '67233221') {
         res.redirect('full-member-details4')
+      } else if (number === '67233232') {
+        res.redirect('full-member-details5')
     } else {
       res.redirect('membership-number-not-found')
     }
@@ -175,6 +177,19 @@ router.post('/schemes', (req, res) => {
       if (pick == 'yes') {
         // Redirect to check member details page
         res.redirect('check-member-details4');
+      } else {
+        // Redirect to enter details manually route - EA number page 
+        res.redirect('manual/ea-number');
+      }
+    });
+
+    //full member details5 page (Scenario5)
+    router.post('/full-member-details5', (req, res) => {
+      const pick = req.session.data['Details']
+  
+      if (pick == 'yes') {
+        // Redirect to check member details page
+        res.redirect('check-member-details5');
       } else {
         // Redirect to enter details manually route - EA number page 
         res.redirect('manual/ea-number');
@@ -220,6 +235,19 @@ router.post('/schemes', (req, res) => {
         }
         });
 
+        //Check member details5 page (scenario 5)
+      router.post('/check-member-details5', (req, res) => {
+        const pick = req.session.data['Details5']
+
+        if (pick == 'yes') {
+          //redirect to annual accrued pension page
+          res.redirect('annual-accrued-pension5');
+        } else {
+          //kickout as details provided do not match
+          res.redirect('estimate-cannot-be-calculated');
+        }
+        });
+
       //Redundancy details page
       router.post('/redundancy-details', (req, res) => {
         const pick = req.session.data['receivedBy']
@@ -227,6 +255,19 @@ router.post('/schemes', (req, res) => {
         if (pick == 'spreadsheet') {
           //redirect to date of estimate spreadsheet page
           res.redirect('date-of-estimate-spreadsheet');
+        } else {
+          //redirect to date of estimate form page
+          res.redirect('date-of-estimate-form');
+        }
+        });
+
+        //Redundancy details5 page (Scenario5)
+      router.post('/redundancy-details5', (req, res) => {
+        const pick = req.session.data['receivedBy']
+
+        if (pick == 'spreadsheet') {
+          //redirect to date of estimate spreadsheet page
+          res.redirect('date-of-estimate-spreadsheet5');
         } else {
           //redirect to date of estimate form page
           res.redirect('date-of-estimate-form');
@@ -262,6 +303,24 @@ router.post('/schemes', (req, res) => {
           if (day === '20' && month === '05' || month === '5' && year === '2026') {
             // send to less than 2 years page
             res.redirect('less-than-2years');
+            
+          } else {
+            // Otherwise send them to pensionable earnings
+            res.redirect('pensionable-earnings-april-spreadsheet');
+          }
+        });
+
+        //Date of estimate spreadsheet5 page (Scenario5)
+        router.post('/date-of-estimate-spreadsheet5', (req, res) => {
+          // Get the values entered
+          const day = req.session.data['estimateDay'];
+          const month = req.session.data['estimateMonth'];
+          const year = req.session.data['estimateYear'];
+        
+          // If the entered date is 15 06 2026
+          if (day === '15' && month === '06' || month === '6' && year === '2026') {
+            // send to over NPA page
+            res.redirect('over-npa-at-redundancy');
             
           } else {
             // Otherwise send them to pensionable earnings
@@ -582,6 +641,18 @@ router.post('/schemes', (req, res) => {
           }
         });
 
+        //Is case updated to recent financial year? (Scenario 5)
+        router.post('/case-updated-to-recent-year5', (req, res) => {
+          const pick = req.session.data['status']
+          if (pick == 'yes') {
+            //redirect to redundancy details page5
+            res.redirect('redundancy-details5');
+          } else {
+            //Has the employer provided the pensionable earnings for scheme year 2025?
+            res.redirect('pensionable-pay-figure-2025');
+          }
+        });
+
         //Has the employer provided the pensionable earnings for Scheme year 2025?
         router.post('/pensionable-pay-figure-2025', (req, res) => {
           const pick = req.session.data['employerProvided1']
@@ -610,6 +681,11 @@ router.post('/schemes', (req, res) => {
         //Annual accrued pension page
         router.post('/annual-accrued-pension', (req, res) => {
           res.redirect('case-updated-to-recent-year')
+        });
+
+        //Annual accrued pension5 page (Scenario5)
+        router.post('/annual-accrued-pension5', (req, res) => {
+          res.redirect('case-updated-to-recent-year5')
         });
 
         //Pensionable earnings April spreadsheet page
