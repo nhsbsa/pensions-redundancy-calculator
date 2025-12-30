@@ -135,6 +135,8 @@ router.post('/schemes', (req, res) => {
       res.redirect('full-member-details-found')
       } else if (number === '78843423') {
         res.redirect('full-member-details3')
+      } else if (number === '67233221') {
+        res.redirect('full-member-details4')
     } else {
       res.redirect('membership-number-not-found')
     }
@@ -166,6 +168,19 @@ router.post('/schemes', (req, res) => {
       }
     });
 
+    //full member details4 page (Scenario4)
+    router.post('/full-member-details4', (req, res) => {
+      const pick = req.session.data['Details']
+  
+      if (pick == 'yes') {
+        // Redirect to check member details page
+        res.redirect('check-member-details4');
+      } else {
+        // Redirect to enter details manually route - EA number page 
+        res.redirect('manual/ea-number');
+      }
+    });
+
       //Check member details page
       router.post('/check-member-details', (req, res) => {
         const pick = req.session.data['allDetails']
@@ -186,6 +201,19 @@ router.post('/schemes', (req, res) => {
         if (pick == 'yes') {
           //redirect to annual accrued pension page
           res.redirect('annual-accrued-pension3');
+        } else {
+          //kickout as details provided do not match
+          res.redirect('estimate-cannot-be-calculated');
+        }
+        });
+
+        //Check member details4 page (scenario 4)
+      router.post('/check-member-details4', (req, res) => {
+        const pick = req.session.data['Details4']
+
+        if (pick == 'yes') {
+          //redirect to annual accrued pension page
+          res.redirect('annual-accrued-pension4');
         } else {
           //kickout as details provided do not match
           res.redirect('estimate-cannot-be-calculated');
@@ -230,14 +258,20 @@ router.post('/schemes', (req, res) => {
           const month = req.session.data['estimateMonth'];
           const year = req.session.data['estimateYear'];
         
-          // If the entered date is 01 11 2025
-          if (day === '01' && month === '11' && year === '2025') {
-            // send to under 55 at redundancy page
-            res.redirect('under-55-at-redundancy');
+          // If the entered date is 20 05 2026
+          if (day === '20' && month === '05' || month === '5' && year === '2026') {
+            // send to less than 2 years page
+            res.redirect('less-than-2years');
+            
           } else {
             // Otherwise send them to pensionable earnings
             res.redirect('pensionable-earnings-april-spreadsheet');
           }
+        });
+
+        //Less than 2 years service kickout page (Scenario 4)
+        router.post('/less-than-2years', (req, res) => {
+          res.redirect('start')
         });
 
         //Estimated pensionable earnings Apr - Mar form (Scenario 3)
