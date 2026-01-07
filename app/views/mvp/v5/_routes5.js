@@ -683,9 +683,19 @@ router.post('/schemes', (req, res) => {
           res.redirect('case-updated-to-recent-year')
         });
 
+        //Annual accrued pension3 page
+        router.post('/annual-accrued-pension3', (req, res) => {
+          res.redirect('pensionable-pay-figure-2025')
+        });
+
+        //Annual accrued pension4 page
+        router.post('/annual-accrued-pension4', (req, res) => {
+          res.redirect('redundancy-details')
+        });
+
         //Annual accrued pension5 page (Scenario5)
         router.post('/annual-accrued-pension5', (req, res) => {
-          res.redirect('case-updated-to-recent-year5')
+          res.redirect('redundancy-details5')
         });
 
         //Pensionable earnings April spreadsheet page
