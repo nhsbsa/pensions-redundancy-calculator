@@ -60,44 +60,27 @@
               <h1>Get a redundancy estimate</h1>
               <p>Use this service to calculate redundancy estimates for NHS Pension Scheme members.</p>
               <h2>Before you start</h2>
-              <p>We can only calculate redundancy estimates for members who:</p>
+              <p>Stage 1 has completed initial checks on the member's details. </p>
+              <p>We can only calculate redundancy estimates for members who meet certain criteria by their redundancy date. They must:</p>
               <ul>
                 <li>have at least 2 years of qualifying membership within the Scheme</li>
                 <li>have 2 years of continuous service verified by the employer</li>
                 <li>have reached the minimum pension age of the Scheme they are part of</li>
-                <li>do not have a GP practice as their employing authority</li>
-                <li>are part of a direction body, have redundancy provisions in place</li>
+                <li>not have a GP practice as their Employing Authority</li>
+                <li>have redundancy provisions in place, if part of a direction body</li>
               </ul>
-
-              {% from 'inset-text/macro.njk' import insetText %}
-
-{{ insetText({
-  html: "<p>If a member does not meet all of the criteria,  you need to inform the requesting employer that we cannot provide an estimate.</p>"
-}) }}
       
               <h2>Completing the calculation</h2>
       
-              <p>When you start the calculation, we'll ask you to enter all the member data we need to get an estimate. After the data is submitted, the service will create 2 documents:</p>
+              <p>When you start the calculation, we will ask you to enter all the member data to get an estimate. After the data is submitted, the service will create:</p>
               <ul>
                 <li>a calculation sheet</li>
                 <li>an estimate letter, for the employer</li>
               </ul>
-              <p>You should open the member's Compendia record before starting.</p>
+              <p>The member's Compendia record should be open before you start.</p>
 
               <div class="nhsuk-form-group nhsuk-form-group--error">
                 <form action="start-error" method="post" class="form">
-                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint contact-error">
-                  <span id="contact-error" class="nhsuk-error-message">
-                    <span class="nhsuk-u-visually-hidden">Error:</span>Select to confirm you have opened the member's Compendia record.
-                  </span>
-                  <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="consentCheck" name="consent" type="checkbox" value="agree">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="check">
-                        I confirm I have opened the member's Compendia record.
-                      </label>
-                    </div>
-                </fieldset>
               </div>
       
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start now</button>
