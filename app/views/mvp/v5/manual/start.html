@@ -55,35 +55,18 @@
                 <li>not have a GP practice as their Employing Authority</li>
                 <li>have redundancy provisions in place, if part of a direction body</li>
               </ul>
-
-              {% from 'inset-text/macro.njk' import insetText %}
-
-{{ insetText({
-  html: "<p>If a member does not meet all of the criteria,  you need to inform the requesting employer that we cannot provide an estimate.</p>"
-}) }}
       
               <h2>Completing the calculation</h2>
       
-              <p>When you start the calculation, we will ask you to enter all the member data we need to get an estimate. After the data is submitted, the service will create 2 documents:</p>
+              <p>When you start the calculation, we will ask you to enter all the member data to get an estimate. After the data is submitted, the service will create:</p>
               <ul>
-                <li>A calculation sheet</li>
-                <li>An estimate letter, for the employer</li>
+                <li>a calculation sheet</li>
+                <li>an estimate letter, for the employer</li>
               </ul>
-              <p>You should open the member's Compendia record before starting.</p>
+              <p>The member's Compendia record should be open before you start.</p>
 
               <div class="nhsuk-form-group">
                 <form action="start" method="post" class="form">
-                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-                  <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
-                    <div class="nhsuk-checkboxes__item">
-                      <input class="nhsuk-checkboxes__input" id="example" name="consent" type="checkbox" value="agree">
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
-                        I confirm I have opened the member's Compendia record.
-                      </label>
-                    </div>
-
-                  </div>
-                </fieldset>
               </div>
       
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start now</button>
