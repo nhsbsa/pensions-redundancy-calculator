@@ -43,25 +43,29 @@
             <div class="nhsuk-grid-column-full">
               <div class="nhsuk-panel">
                 <h1 class="nhsuk-panel__title">
-                  Upload successful
+                  Estimate sent
                 </h1>
               </div>
       
               
               
-              <p>You've uploaded 2 files:</p>
+              <p>The redundancy estimate letter has been sent to:</p>
+              <p><b>{{ data['emailAddress']}}</b></p>
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>A copy of the email is in the pensions estimate email account.</p>
+              </div>
+
+              <p>The following files have been uploaded to the member's Compendia record:</p>
               <ul>
-                <li>The calculation sheet.</li>
-                <li>The redundancy estimate letter.</li>
+                <li>JS_12345678_Estimateletter</li>
+                <li>JS_12345678_Calculationsheet</li>
               </ul>
+              
 
-              <p>You can find the documents on the member's record in Electronic Document Manager (EDM). It may take up to 15 minutes for them to appear.</p>
-              <p>You can find the estimate letter in your <b>Downloads</b> folder on your device.</p>
+              <p>You can find them on the member's record in Electronic Document Manager (EDM). It may take up to 15 minutes for them to appear.</p>
 
-              <h3>What happens next</h3>
-              <p>Before starting a new estimate, you'll need to email the redundancy estimate letter to the employer.</p>
-
-              <p><a href="https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook?deeplink=%2fmail%2f0%2f%3fnlp%3d0&sdf=0" target="_blank">Email the employer the estimate letter (opens in a new tab)</a></p>
 
               <form action="upload-files" method="post" class="form">
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start a new calculation</button>

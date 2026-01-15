@@ -394,7 +394,7 @@ router.post('/schemes', (req, res) => {
 
           // Ea Email address page
           router.post('/ea-email-address', (req, res) => {
-            res.redirect('upload-files')
+            res.redirect('confirm-email')
           });
 
           //Complexity check clean page
@@ -410,13 +410,13 @@ router.post('/schemes', (req, res) => {
             }
             });
 
-              //Download files page
+              //Download files page (QC route)
               router.post('/download-files', (req, res) => {
                 //direct back to the start page
                 res.redirect('start')
               });
 
-              //Upload files page
+              //Upload files page (EDM)
               router.post('/upload-files', (req, res) => {
                 //direct back to the start page
                 res.redirect('start')
@@ -727,6 +727,32 @@ router.post('/schemes', (req, res) => {
         router.post('/manual/total-pensionable-earnings', (req, res) => {
           res.redirect('annual-accrued-pension')
         });
+
+        // Exit mid journey page (adhoc kickout)
+        router.post('/adhoc/exit-journey', (req, res) => {
+          const selection = req.session.data['exitJourney']
+  
+          if (selection == 'yes') {
+            //redirect back to start page
+            res.redirect('start');
+          } else {
+            //redirect to same page
+            res.redirect('exit-journey');
+          }
+          });
+
+          // Confirm email page
+        router.post('/confirm-email', (req, res) => {
+          const selection = req.session.data['emailCorrect']
+  
+          if (selection == 'yes') {
+            //redirect back to start page
+            res.redirect('upload-files');
+          } else {
+            //redirect to same page
+            res.redirect('ea-email-address');
+          }
+          });
 
 
 
