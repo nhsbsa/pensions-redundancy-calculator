@@ -575,7 +575,7 @@ router.post('/schemes', (req, res) => {
 
           // Ea Email address page (manual journey)
           router.post('/manual/ea-email-address', (req, res) => {
-            res.redirect('upload-files')
+            res.redirect('confirm-email')
           });
 
           //Upload files page
