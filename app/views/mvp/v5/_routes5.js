@@ -746,10 +746,23 @@ router.post('/schemes', (req, res) => {
           const selection = req.session.data['emailCorrect']
   
           if (selection == 'yes') {
-            //redirect back to start page
+            //redirect back to upload file page
             res.redirect('upload-files');
           } else {
-            //redirect to same page
+            //redirect to email address enter page
+            res.redirect('ea-email-address');
+          }
+          });
+
+          // Confirm email page (manaul route)
+        router.post('/manual/confirm-email', (req, res) => {
+          const selection = req.session.data['emailCorrect']
+  
+          if (selection == 'yes') {
+            //redirect back to upload files page
+            res.redirect('upload-files');
+          } else {
+            //redirect to enter email address page
             res.redirect('ea-email-address');
           }
           });
