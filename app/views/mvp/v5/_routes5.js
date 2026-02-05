@@ -51,11 +51,11 @@ router.post('/schemes', (req, res) => {
       const select = req.session.data['check']
   
       if (select == 'yes') {
-        // Redirect to EA code page
-        res.redirect('manual/ea-number');
-      } else {
-        // If no back to the membership number page
+        // Redirect to membership number page
         res.redirect('membership-number');
+      } else {
+        // If no kickout user
+        res.redirect('no-valid-membership-number');
       }
     });
 
@@ -159,7 +159,7 @@ router.post('/schemes', (req, res) => {
         res.redirect('multi-employments');
       } else {
         // Redirect to enter details manually route - EA number page 
-        res.redirect('manual/ea-number');
+        res.redirect('membership-number');
       }
     });
 
@@ -172,7 +172,7 @@ router.post('/schemes', (req, res) => {
         res.redirect('check-member-details4');
       } else {
         // Redirect to enter details manually route - EA number page 
-        res.redirect('manual/ea-number');
+        res.redirect('membership-number');
       }
     });
 
@@ -185,7 +185,7 @@ router.post('/schemes', (req, res) => {
         res.redirect('check-member-details5');
       } else {
         // Redirect to enter details manually route - EA number page 
-        res.redirect('manual/ea-number');
+        res.redirect('membership-number');
       }
     });
 

@@ -41,34 +41,19 @@
         <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
-              <div class="nhsuk-panel">
-                <h1 class="nhsuk-panel__title">
-                  Estimate sent
-                </h1>
-              </div>
+              <form action="cannot-be-calculated" method="post" class="form">
       
-              
-              
-              <p>The redundancy estimate letter has been sent to:</p>
-              <p><b>{{ data['emailAddress']}}</b></p>
+              <h1 class="nhsuk-heading-l">An estimate cannot be calculated</h1>
+              <p>As a membership number could not be found, the calculator cannot complete a redundancy estimate for this member.</p>
 
+              <h2>What happens next</h2>
+              <p>You need to book out the case in Operations Manager for another Pensions Estimate team member to review the request.</p>
 
-              <p>The following files have been uploaded to the member's Compendia record:</p>
-              <ul>
-                <li>JS_12345678_EstimateLetter</li>
-                <li>JS_12345678_CalculationSheet</li>
-                <li>a copy of the sending email</li>
-              </ul>
               
 
-              <p>You can find them on the member's record in Electronic Document Manager (EDM). It may take up to 15 minutes for them to appear.</p>
-
-              <h2>Next steps</h2>
-              <p>Run the workflow in Compendia to update the member's record before starting a new calculation.</p
-
-              <form action="upload-files" method="post" class="form">
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start a new calculation</button>
             </form>
+
       
             </div>
           </div>

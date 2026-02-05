@@ -44,39 +44,39 @@
 
               <form action="confirm-email" method="post" class="form">
       
-              <h1 class="nhsuk-heading-l">Check the receiving estimate email address is correct</h1>
+              <h1 class="nhsuk-heading-l">Confirm the receiving email address is correct before sending the estimate </h1>
             
-              <p>You can find this information:</p>
+              <p>The redundancy estimate letter will be sent to:</p>
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>{{ data['emailAddress']}}</p>
+              </div>
+
+              <p>You can check the email address information:</p>
               <ul>
-                <li>on the 'Bulk redundancy spreadsheet' in the' Requesters details' section sent by the employer</li>
+                <li>in the 'Requestors details' section of the 'Bulk redundancy spreadsheet' sent by the employer</li>
                 <li>on the 'Request for an estimate of benefits' form (AW295) provided by the employer</li>
                 <li>in the 'Data Maintenance' set on Compendia</li>
               </ul>
-
-
-<div class="nhsuk-inset-text">
-  <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>{{ data['emailAddress']}}</p>
-</div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="">
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
       <h1 class="nhsuk-fieldset__heading">
-        Do you want to continue with this email address?
+        Do you want to send the estimate to this email address?
       </h1>
     </legend>
     <div class="nhsuk-radios" data-module="nhsuk-radios">
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="example" name="emailCorrect" type="radio" value="yes">
         <label class="nhsuk-label nhsuk-radios__label" for="example">
-          Yes, it's correct
+          Yes, send the estimate to this email address
         </label>
       </div>
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="example-2" name="emailCorrect" type="radio" value="no">
         <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          No, it needs changing
+          No, the email address needs changing
         </label>
       </div>
     </div>
