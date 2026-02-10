@@ -50,7 +50,7 @@
                   <div class="nhsuk-error-summary__body">
                     <ul class="nhsuk-list nhsuk-error-summary__list">
                       <li>
-                        <a href="#consentCheck">Select you have opened the member's record on Compendia</a>
+                        <a href="#consentCheck">Select you have checked the member's record on Compendia against the criteria.</a>
                       </li>
                     </ul>
                   </div>
@@ -58,9 +58,8 @@
               </div>
       
               <h1>Get a redundancy estimate</h1>
-              <p>Use this service to calculate redundancy estimates for NHS Pension Scheme members.</p>
-              <h2>Before you start</h2>
-              <p>Stage 1 has completed initial checks on the member's details. </p>
+              <p>Use this service to calculate and send redundancy estimates for NHS Pension Scheme members.</p>
+              <h2>Check if a member is eligible for redundancy</h2>
               <p>We can only calculate redundancy estimates for members who meet certain criteria by their redundancy date. They must:</p>
               <ul>
                 <li>have at least 2 years of qualifying membership within the Scheme</li>
@@ -70,18 +69,27 @@
                 <li>have redundancy provisions in place, if part of a direction body</li>
               </ul>
       
-              <h2>Completing the calculation</h2>
+              <h2>Before you start</h2>
       
-              <p>When you start the calculation, we will ask you to enter all the member data to get an estimate. After the data is submitted, the service will create:</p>
-              <ul>
-                <li>a calculation sheet</li>
-                <li>an estimate letter, for the employer</li>
-              </ul>
-              <p>The member's Compendia record should be open before you start.</p>
+              <p>Make sure the the member's Compendia record is open before you start.</p>
+        
+              <div class="nhsuk-inset-text">
+                <p>If a member's record is restricted you cannot continue with the calculation. You will need someone else in the Pensions Estimate team who can use other tools for the estimate.</p>
+              </div>
 
               <div class="nhsuk-form-group nhsuk-form-group--error">
                 <form action="start-error" method="post" class="form">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                  <div class="nhsuk-checkboxes" data-module="nhsuk-checkboxes">
+                    <div class="nhsuk-checkboxes__item">
+                      <input class="nhsuk-checkboxes__input" id="consentCheck" name="consent" type="checkbox" value="agree">
+                      <label class="nhsuk-label nhsuk-checkboxes__label" for="example">
+                        I confirm I've checked the member's record on Compendia and against the criteria.
+                      </label>
+                    </div>
+                </fieldset>
               </div>
+
       
               <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Start now</button>
             </form>

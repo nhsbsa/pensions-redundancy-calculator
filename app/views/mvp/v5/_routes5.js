@@ -31,7 +31,14 @@ router.post('/schemes', (req, res) => {
 
     //Start
     router.post('/start', (req, res) => {
-      res.redirect('schemes')
+      const pick = req.session.data['consent']
+      if (pick == 'agree') {
+        //redirect to scheme selection page
+        res.redirect('schemes');
+      } else {
+        //redirect to same error state page
+        res.redirect('start-error');
+      }
     });
 
     //Start page error
