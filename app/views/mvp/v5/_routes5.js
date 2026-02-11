@@ -110,10 +110,10 @@ router.post('/schemes', (req, res) => {
   
       if (select == 'yes') {
         // kickout page as complexity detected
-        res.redirect('membership-number');
+        res.redirect('cannot-be-calculated');
       } else {
         // sent to membership number page
-        res.redirect('cannot-be-calculated');
+        res.redirect('membership-number');
       }
     });
 
