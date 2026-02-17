@@ -109,11 +109,11 @@ router.post('/schemes', (req, res) => {
       const select = req.session.data['complexities']
   
       if (select == 'yes') {
-        // kickout page as complexity detected
-        res.redirect('cannot-be-calculated');
-      } else {
         // sent to membership number page
         res.redirect('membership-number');
+      } else {
+        // sent to kickout screen - cannot be calculated
+        res.redirect('cannot-be-calculated');
       }
     });
 
