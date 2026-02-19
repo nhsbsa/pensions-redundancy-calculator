@@ -1,0 +1,101 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /app/views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /app/views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!--
+  Use this to set the page name which will appear at the
+  start of the <title> tag, followed by the service name.
+  This is often not needed on the homepage, where only the
+  service name is needed. You can also reuse this variable
+  within the <h1>, where they are the same.
+-->
+{% set pageName = "" %}
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <!-- You can delete the lines below -->
+     
+
+
+      <!-- Add your content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+      <div class="nhsuk-width-container">
+      
+        <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+      
+              <h1 class="nhsuk-heading-l">Member's annual accrued pension</h1>
+              
+              
+              <p>These details are from the member's Compendia record. You can find them in the 'Annual Accrued Pension' set.</p>
+
+              <div class="nhsuk-inset-text">
+                <span class="nhsuk-u-visually-hidden">Information: </span>
+                <p>If the member's record does not include the latest financial year yet, you'll need to enter the pensionable earnings for that year later.</p>
+              </div>
+
+              <table class="nhsuk-table">
+                <caption class="nhsuk-table__caption">Annual accrued pension</caption>
+                <thead class="nhsuk-table__head">
+                  <tr>
+                    <th scope="col" class="nhsuk-table__header nhsuk-table__header">Scheme Year</th>
+                    <th scope="col" class="nhsuk-table__header nhsuk-table__header">Sum of Employer Pay</th>
+                    <th scope="col" class="nhsuk-table__header nhsuk-table__header">2015 Acc Pen for scheme year</th>
+                    <th scope="col" class="nhsuk-table__header nhsuk-table__header">Closing balance</th>
+                    <th scope="col" class="nhsuk-table__header nhsuk-table__header">Factor</th>
+                    <th scope="col" class="nhsuk-table__header nhsuk-table__header">Balance to carry forward</th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell nhsuk-table__cell">2025</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£39,300.10</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£727.78</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£1,434.51</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">3.2%</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£1,480.41</td>
+                  </tr>
+                  <tr class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell nhsuk-table__cell">2024</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£35,270.95</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£653.17</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£653.17</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">8.2%</td>
+                    <td class="nhsuk-table__cell nhsuk-table__cell">£706.73</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              
+
+              <div class="nhsuk-form-group">
+                <form action="annual-accrued-pension6" method="post" class="form">        
+              <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+            </form>
+            </div>
+        </main>
+      </div>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

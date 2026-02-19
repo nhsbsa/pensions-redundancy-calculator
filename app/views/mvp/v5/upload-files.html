@@ -4,6 +4,7 @@
 
 <!-- Extends the layout from /app/views/layout.html -->
 {% extends 'layout.html' %}
+{% set hideBack ="true"%}
 <!--
   In /app/views/layout.html you can:
     - change the header and footer
@@ -51,6 +52,8 @@
               
               <p>The redundancy estimate letter has been sent to:</p>
               <p><b>{{ data['emailAddress']}}</b></p>
+
+              <p>A copy has been sent to the pensions estimate shared mailbox.</p>
 
 
               <p>The following files have been uploaded to the member's Compendia record:</p>

@@ -139,6 +139,8 @@ router.post('/schemes', (req, res) => {
         res.redirect('full-member-details4')
       } else if (number === '67233232') {
         res.redirect('full-member-details5')
+      } else if (number === '67092289') {
+        res.redirect('full-member-details6')
     } else {
       res.redirect('membership-number-not-found')
     }
@@ -190,6 +192,19 @@ router.post('/schemes', (req, res) => {
       if (pick == 'yes') {
         // Redirect to check member details page
         res.redirect('check-member-details5');
+      } else {
+        // Redirect to enter details manually route - EA number page 
+        res.redirect('membership-number');
+      }
+    });
+
+    //full member details6 page - IOE
+    router.post('/full-member-details6', (req, res) => {
+      const pick = req.session.data['Details']
+  
+      if (pick == 'yes') {
+        // Redirect to check member details page
+        res.redirect('check-member-details6');
       } else {
         // Redirect to enter details manually route - EA number page 
         res.redirect('membership-number');
@@ -248,6 +263,19 @@ router.post('/schemes', (req, res) => {
         }
         });
 
+        //Check member details6 page  IOE
+      router.post('/check-member-details6', (req, res) => {
+        const pick = req.session.data['Details6']
+
+        if (pick == 'yes') {
+          //redirect to annual accrued pension page
+          res.redirect('annual-accrued-pension6');
+        } else {
+          //kickout as details provided do not match
+          res.redirect('estimate-cannot-be-calculated');
+        }
+        });
+
       //Redundancy details page
       router.post('/redundancy-details', (req, res) => {
         const pick = req.session.data['receivedBy']
@@ -268,6 +296,19 @@ router.post('/schemes', (req, res) => {
         if (pick == 'spreadsheet') {
           //redirect to date of estimate spreadsheet page
           res.redirect('date-of-estimate-spreadsheet5');
+        } else {
+          //redirect to date of estimate form page
+          res.redirect('date-of-estimate-form');
+        }
+        });
+
+        //Redundancy details6 page IOE
+      router.post('/redundancy-details6', (req, res) => {
+        const pick = req.session.data['receivedBy']
+
+        if (pick == 'spreadsheet') {
+          //redirect to date of estimate spreadsheet page
+          res.redirect('date-of-estimate-spreadsheet6');
         } else {
           //redirect to date of estimate form page
           res.redirect('date-of-estimate-form');
@@ -378,7 +419,7 @@ router.post('/schemes', (req, res) => {
 
         //check final details page
         router.post('/check-final-details', (req, res) => {
-          res.redirect('calculation-result')
+          res.redirect('calculation-result-test')
         });
 
         //Calculation result page
@@ -696,6 +737,11 @@ router.post('/schemes', (req, res) => {
         //Annual accrued pension5 page (Scenario5)
         router.post('/annual-accrued-pension5', (req, res) => {
           res.redirect('redundancy-details5')
+        });
+
+        //Annual accrued pension6 page IOE
+        router.post('/annual-accrued-pension6', (req, res) => {
+          res.redirect('redundancy-details6')
         });
 
         //Pensionable earnings April spreadsheet page
