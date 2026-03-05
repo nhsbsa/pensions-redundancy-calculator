@@ -721,7 +721,7 @@ router.post('/schemes', (req, res) => {
 
         //Annual accrued pension page
         router.post('/annual-accrued-pension', (req, res) => {
-          res.redirect('case-updated-to-recent-year')
+          res.redirect('redundancy-details')
         });
 
         //Annual accrued pension3 page
